@@ -261,22 +261,25 @@ export default function CaseStudies({ onOpenImageLightbox }) {
                   borderRadius: '1rem',
                   overflow: 'hidden',
                   border: '1px solid var(--border-subtle)',
-                  background: '#09090e',
-                  padding: '2rem',
+                  background: '#040407',
+                  padding: '1.5rem',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.5rem',
+                  position: 'relative',
+                  cursor: 'pointer'
                 }}
+                onClick={() => onOpenImageLightbox && onOpenImageLightbox(s.s02_logo.logoImage, 'Master Brand Logomark Matrix')}
               >
                 <img
                   src={s.s02_logo.logoImage}
                   alt="DukaanPilot & Folio Logo Construction"
-                  style={{ maxHeight: '280px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
+                  style={{ maxHeight: '520px', width: '100%', objectFit: 'contain' }}
                 />
-                <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                  Fig 02.1 — Master Brand Logomark Matrix (DukaanPilot, CloudDataGuard, Brewora, Flexora, Luméa, Nexora)
+                <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#93c5fd', fontFamily: 'var(--font-mono)' }}>
+                  🔍 Click image to view in Full-Screen Lightbox
                 </div>
               </div>
 
@@ -457,19 +460,27 @@ export default function CaseStudies({ onOpenImageLightbox }) {
               </p>
               <div
                 style={{
-                  borderRadius: '0.75rem',
+                  borderRadius: '1rem',
                   overflow: 'hidden',
                   border: '1px solid var(--border-subtle)',
-                  background: '#09090b',
+                  background: '#040407',
                   display: 'flex',
-                  justifyContent: 'center'
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '1.5rem',
+                  cursor: 'pointer'
                 }}
+                onClick={() => onOpenImageLightbox && onOpenImageLightbox(s.s06_social.previewImage, 'Social Media Identity System')}
               >
                 <img
                   src={s.s06_social.previewImage}
                   alt="Social Media Branding"
-                  style={{ maxWidth: '480px', width: '100%', height: 'auto', objectFit: 'contain' }}
+                  style={{ maxHeight: '550px', width: '100%', objectFit: 'contain' }}
                 />
+                <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#93c5fd', fontFamily: 'var(--font-mono)' }}>
+                  🔍 Click image to view in Full-Screen Lightbox
+                </div>
               </div>
             </div>
           )}
@@ -485,19 +496,27 @@ export default function CaseStudies({ onOpenImageLightbox }) {
               </p>
               <div
                 style={{
-                  borderRadius: '0.75rem',
+                  borderRadius: '1rem',
                   overflow: 'hidden',
                   border: '1px solid var(--border-subtle)',
-                  background: '#09090b',
+                  background: '#040407',
                   display: 'flex',
-                  justifyContent: 'center'
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '1.5rem',
+                  cursor: 'pointer'
                 }}
+                onClick={() => onOpenImageLightbox && onOpenImageLightbox(s.s07_website.previewImage, 'Digital Product & Transit UI Showcase')}
               >
                 <img
                   src={s.s07_website.previewImage}
                   alt="Product UI and Web Interface"
-                  style={{ maxWidth: '420px', width: '100%', height: 'auto', objectFit: 'contain' }}
+                  style={{ maxHeight: '550px', width: '100%', objectFit: 'contain' }}
                 />
+                <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#93c5fd', fontFamily: 'var(--font-mono)' }}>
+                  🔍 Click image to view in Full-Screen Lightbox
+                </div>
               </div>
             </div>
           )}
@@ -530,19 +549,27 @@ export default function CaseStudies({ onOpenImageLightbox }) {
               </div>
               <div
                 style={{
-                  borderRadius: '0.75rem',
+                  borderRadius: '1rem',
                   overflow: 'hidden',
                   border: '1px solid var(--border-subtle)',
-                  background: '#09090b',
+                  background: '#040407',
                   display: 'flex',
-                  justifyContent: 'center'
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '1.5rem',
+                  cursor: 'pointer'
                 }}
+                onClick={() => onOpenImageLightbox && onOpenImageLightbox(s.s08_mockups.previewImage, 'Real World Transit App & Posters')}
               >
                 <img
                   src={s.s08_mockups.previewImage}
                   alt="Real World Transit & Brand Mockups"
-                  style={{ maxWidth: '420px', width: '100%', height: 'auto', objectFit: 'contain' }}
+                  style={{ maxHeight: '550px', width: '100%', objectFit: 'contain' }}
                 />
+                <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#93c5fd', fontFamily: 'var(--font-mono)' }}>
+                  🔍 Click image to view in Full-Screen Lightbox
+                </div>
               </div>
             </div>
           )}

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Sparkles, Filter, Layers, Play, Image as ImageIcon } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Layers, Play, Image as ImageIcon, Maximize2 } from 'lucide-react';
 import { projects, projectCategories } from '../../data/projects';
 
-export default function FeaturedWork({ onSelectProject }) {
+export default function FeaturedWork({ onSelectProject, onOpenLightbox }) {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = projects.filter((project) => {
@@ -27,7 +27,7 @@ export default function FeaturedWork({ onSelectProject }) {
         >
           <div className="section-tag">
             <Sparkles size={13} />
-            <span>Featured Portfolio</span>
+            <span>Featured Portfolio & Visuals</span>
           </div>
 
           <div
@@ -41,14 +41,13 @@ export default function FeaturedWork({ onSelectProject }) {
           >
             <div>
               <h2 className="section-title">
-                Selected Work & Case Studies
+                Selected Work & Visual Systems
               </h2>
               <p className="section-desc">
-                High-fidelity brand systems, digital interfaces, video edits, and editorial graphics. Built with conceptual clarity and visual precision.
+                High-impact brand systems, mobile application UI, editorial graphic posters, and video edits presented in large editorial format.
               </p>
             </div>
 
-            {/* Honest Portfolio Transparency Badge */}
             <div
               style={{
                 display: 'inline-flex',
@@ -63,8 +62,8 @@ export default function FeaturedWork({ onSelectProject }) {
                 fontFamily: 'var(--font-mono)'
               }}
             >
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#3b82f6' }} />
-              Honest Labeling: Concept & Personal Works
+              <Maximize2 size={13} className="text-blue-400" />
+              <span>Full-Screen Immersive Previews Enabled</span>
             </div>
           </div>
         </div>
@@ -77,7 +76,7 @@ export default function FeaturedWork({ onSelectProject }) {
             gap: '0.5rem',
             overflowX: 'auto',
             paddingBottom: '1rem',
-            marginBottom: '2.5rem',
+            marginBottom: '3rem',
             scrollbarWidth: 'none'
           }}
         >
@@ -104,208 +103,275 @@ export default function FeaturedWork({ onSelectProject }) {
           ))}
         </div>
 
-        {/* Visual Project Cards Grid */}
+        {/* Large Immersive Editorial Showcase Cards */}
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-            gap: '2rem'
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '3.5rem'
           }}
-          className="projects-grid"
         >
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className="project-card group cursor-pointer"
-              onClick={() => onSelectProject(project)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  onSelectProject(project);
-                }
+              className="glass-card group featured-item-card"
+              style={{
+                borderRadius: '1.5rem',
+                overflow: 'hidden',
+                border: '1px solid var(--border-subtle)',
+                display: 'grid',
+                gridTemplateColumns: '1fr',
+                gap: '0',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                background: 'var(--bg-card)'
               }}
-              style={{ cursor: 'pointer' }}
             >
-              {/* Card Cover Visual Container */}
-              <div className="card-img-container">
+              {/* Massive Visual Display Window (Hero preview size) */}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  minHeight: '420px',
+                  maxHeight: '620px',
+                  background: '#07070a',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                  cursor: 'pointer'
+                }}
+                onClick={() => onSelectProject(project)}
+              >
                 <img
                   src={project.coverImage}
                   alt={project.title}
                   loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    maxHeight: '620px',
+                    objectFit: 'contain',
+                    backgroundColor: '#07070a',
+                    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                  className="group-hover:scale-102"
                 />
 
-                {/* Top Corner Honest Badge */}
+                {/* Overlaid Badges */}
                 <div
                   style={{
                     position: 'absolute',
-                    top: '1rem',
-                    left: '1rem',
-                    background: 'rgba(9, 9, 11, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid var(--border-medium)',
-                    padding: '0.25rem 0.65rem',
-                    borderRadius: '0.4rem',
-                    fontSize: '0.72rem',
-                    fontFamily: 'var(--font-mono)',
-                    color: '#e4e4e7',
-                    fontWeight: '500'
+                    top: '1.25rem',
+                    left: '1.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    zIndex: 5
                   }}
                 >
-                  {project.typeBadge}
+                  <span
+                    style={{
+                      background: 'rgba(9, 9, 11, 0.9)',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid var(--border-medium)',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: '0.5rem',
+                      fontSize: '0.75rem',
+                      fontFamily: 'var(--font-mono)',
+                      color: '#ffffff',
+                      fontWeight: '600'
+                    }}
+                  >
+                    {project.typeBadge}
+                  </span>
+
+                  <span
+                    style={{
+                      background: 'rgba(37, 99, 235, 0.2)',
+                      border: '1px solid rgba(37, 99, 235, 0.4)',
+                      padding: '0.35rem 0.65rem',
+                      borderRadius: '0.5rem',
+                      fontSize: '0.75rem',
+                      fontFamily: 'var(--font-mono)',
+                      color: '#93c5fd'
+                    }}
+                  >
+                    {project.category}
+                  </span>
                 </div>
 
-                {/* Media Indicator Badge */}
+                {/* Action Buttons Top Right: Fullscreen Lightbox Button */}
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '1rem',
-                    right: '1rem',
+                    top: '1.25rem',
+                    right: '1.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    zIndex: 5
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenLightbox(project.coverImage, `${project.title} — ${project.tagline}`);
+                    }}
+                    title="Open Fullscreen View"
+                    style={{
+                      background: 'rgba(9, 9, 11, 0.85)',
+                      backdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      color: '#ffffff',
+                      borderRadius: '0.5rem',
+                      padding: '0.45rem 0.75rem',
+                      fontSize: '0.75rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      cursor: 'pointer',
+                      fontFamily: 'var(--font-mono)'
+                    }}
+                  >
+                    <Maximize2 size={13} />
+                    <span>Fullscreen</span>
+                  </button>
+                </div>
+
+                {/* Bottom Visual Overlay Prompt */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '1.25rem',
+                    right: '1.25rem',
                     background: 'rgba(9, 9, 11, 0.85)',
                     backdropFilter: 'blur(8px)',
                     border: '1px solid var(--border-subtle)',
-                    padding: '0.25rem 0.55rem',
-                    borderRadius: '0.4rem',
+                    padding: '0.35rem 0.75rem',
+                    borderRadius: '0.5rem',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.35rem',
-                    fontSize: '0.72rem',
+                    gap: '0.4rem',
+                    fontSize: '0.75rem',
                     color: 'var(--text-secondary)'
                   }}
                 >
-                  {project.videoUrl ? <Play size={11} className="text-emerald-400" /> : <ImageIcon size={11} />}
-                  <span>{project.gallery.length} visual{project.gallery.length > 1 ? 's' : ''}</span>
+                  {project.videoUrl ? <Play size={12} className="text-emerald-400" /> : <ImageIcon size={12} />}
+                  <span>{project.gallery.length} visual asset{project.gallery.length > 1 ? 's' : ''}</span>
                 </div>
               </div>
 
-              {/* Card Body Details */}
+              {/* Informative Details Strip Below The Big Visual */}
               <div
                 style={{
-                  padding: '1.75rem',
+                  padding: '2rem 2.25rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  flexGrow: 1
+                  gap: '1rem',
+                  borderTop: '1px solid var(--border-subtle)',
+                  background: 'rgba(17, 17, 23, 0.95)'
                 }}
               >
-                {/* Meta Row: Category & Year */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '0.5rem',
-                    fontSize: '0.78rem',
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--accent-blue)'
-                  }}
-                >
-                  <span>{project.category}</span>
-                  <span style={{ color: 'var(--text-muted)' }}>{project.year}</span>
-                </div>
-
-                {/* Title */}
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '1.35rem',
-                    fontWeight: '700',
-                    color: '#ffffff',
-                    marginBottom: '0.45rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <span>{project.title}</span>
-                  <ArrowUpRight
-                    size={18}
-                    className="text-zinc-500 group-hover:text-white transition-colors"
-                    style={{ transition: 'color 0.2s ease, transform 0.2s ease' }}
-                  />
-                </h3>
-
-                {/* Tagline / Subtitle */}
-                <p
-                  style={{
-                    fontSize: '0.8rem',
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--text-muted)',
-                    marginBottom: '0.85rem'
-                  }}
-                >
-                  {project.tagline}
-                </p>
-
-                {/* Short Description */}
-                <p
-                  style={{
-                    fontSize: '0.9rem',
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.55',
-                    marginBottom: '1.5rem',
-                    flexGrow: 1
-                  }}
-                >
-                  {project.shortDescription}
-                </p>
-
-                {/* Tools Badges */}
                 <div
                   style={{
                     display: 'flex',
                     flexWrap: 'wrap',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    paddingTop: '1rem',
-                    borderTop: '1px solid var(--border-subtle)',
-                    gap: '0.5rem'
+                    gap: '1rem'
                   }}
                 >
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
-                    {project.tools.slice(0, 3).map((tool) => (
+                  <div>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: 'clamp(1.5rem, 2.8vw, 2.1rem)',
+                        fontWeight: '800',
+                        color: '#ffffff',
+                        marginBottom: '0.25rem'
+                      }}
+                    >
+                      {project.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: '0.95rem',
+                        fontFamily: 'var(--font-mono)',
+                        color: 'var(--accent-blue)'
+                      }}
+                    >
+                      {project.tagline}
+                    </p>
+                  </div>
+
+                  {/* Open Deep Dive Button */}
+                  <button
+                    type="button"
+                    onClick={() => onSelectProject(project)}
+                    className="btn-primary"
+                    style={{ padding: '0.75rem 1.4rem' }}
+                  >
+                    <span>View Project Case</span>
+                    <ArrowUpRight size={17} />
+                  </button>
+                </div>
+
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: '1.65',
+                    maxWidth: '56rem'
+                  }}
+                >
+                  {project.shortDescription}
+                </p>
+
+                {/* Bottom Tools & Role Bar */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    paddingTop: '1.25rem',
+                    borderTop: '1px solid var(--border-subtle)',
+                    gap: '1rem',
+                    fontSize: '0.85rem'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <span style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '0.78rem' }}>
+                      ROLE:
+                    </span>
+                    <span style={{ color: '#ffffff', fontWeight: '500' }}>{project.role}</span>
+                  </div>
+
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                    {project.tools.map((tool) => (
                       <span
                         key={tool}
                         style={{
-                          fontSize: '0.7rem',
+                          fontSize: '0.72rem',
                           fontFamily: 'var(--font-mono)',
                           color: 'var(--text-muted)',
-                          background: 'rgba(255, 255, 255, 0.03)',
-                          padding: '0.2rem 0.45rem',
+                          background: 'rgba(255, 255, 255, 0.04)',
+                          padding: '0.2rem 0.55rem',
                           borderRadius: '4px',
-                          border: '1px solid rgba(255, 255, 255, 0.04)'
+                          border: '1px solid rgba(255, 255, 255, 0.06)'
                         }}
                       >
                         {tool}
                       </span>
                     ))}
                   </div>
-
-                  <span
-                    style={{
-                      fontSize: '0.78rem',
-                      fontWeight: '600',
-                      color: '#ffffff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.2rem'
-                    }}
-                  >
-                    View Project →
-                  </span>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .projects-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

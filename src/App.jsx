@@ -12,17 +12,23 @@ import Contact from './components/sections/Contact';
 import Footer from './components/common/Footer';
 import ProjectModal from './components/common/ProjectModal';
 import VideoModal from './components/common/VideoModal';
+import ImageLightbox from './components/common/ImageLightbox';
 import './App.css';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [lightboxData, setLightboxData] = useState(null);
 
   const handleOpenContact = () => {
     const el = document.querySelector('#contact');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleOpenLightbox = (imageUrl, caption) => {
+    setLightboxData({ url: imageUrl, caption });
   };
 
   return (
@@ -36,11 +42,14 @@ export default function App() {
           onOpenProject={(proj) => setSelectedProject(proj)}
           onOpenVideo={(vid) => setSelectedVideo(vid)}
         />
-        <FeaturedWork onSelectProject={(proj) => setSelectedProject(proj)} />
+        <FeaturedWork
+          onSelectProject={(proj) => setSelectedProject(proj)}
+          onOpenLightbox={handleOpenLightbox}
+        />
         <Services />
         <VideoPortfolio onPlayVideo={(vid) => setSelectedVideo(vid)} />
         <MotionGraphics onPlayVideo={(vid) => setSelectedVideo(vid)} />
-        <CaseStudies />
+        <CaseStudies onOpenImageLightbox={handleOpenLightbox} />
         <WorkProcess />
         <About />
         <Contact />
@@ -49,20 +58,31 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Modals */}
+      {/* Project Deep Dive Modal */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
           onSelectProject={(nextProj) => setSelectedProject(nextProj)}
           onPlayVideo={(vid) => setSelectedVideo(vid)}
+          onOpenLightbox={handleOpenLightbox}
         />
       )}
 
+      {/* Cinematic Fullscreen Video Modal */}
       {selectedVideo && (
         <VideoModal
           video={selectedVideo}
           onClose={() => setSelectedVideo(null)}
+        />
+      )}
+
+      {/* Full-Screen Edge-to-Edge Image Lightbox */}
+      {lightboxData && (
+        <ImageLightbox
+          image={lightboxData.url}
+          caption={lightboxData.caption}
+          onClose={() => setLightboxData(null)}
         />
       )}
     </div>

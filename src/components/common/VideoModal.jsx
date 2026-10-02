@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { X, Play, Volume2, VolumeX, Maximize2, RotateCcw, Clock, Film } from 'lucide-react';
+import { X, Maximize2, Film, Clock, Sparkles } from 'lucide-react';
 
 export default function VideoModal({ video, onClose }) {
   const videoRef = useRef(null);
@@ -20,68 +20,136 @@ export default function VideoModal({ video, onClose }) {
 
   const isVertical = video.aspectRatio === '9:16';
 
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <div
       className="modal-backdrop"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
+      style={{
+        padding: '1rem',
+        background: 'rgba(5, 5, 8, 0.95)'
+      }}
     >
       <div
         className="modal-container"
         onClick={(e) => e.stopPropagation()}
         style={{
-          maxWidth: isVertical ? '440px' : '900px',
-          margin: 'auto'
+          width: '95vw',
+          maxWidth: isVertical ? '480px' : '1100px',
+          maxHeight: '92vh',
+          borderRadius: '1.25rem',
+          margin: 'auto',
+          background: '#0c0c10',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+          boxShadow: '0 30px 80px rgba(0, 0, 0, 0.9)'
         }}
       >
-        {/* Header */}
+        {/* Header Bar */}
         <div
           style={{
-            padding: '1.25rem 1.75rem',
+            padding: '1.25rem 2rem',
             borderBottom: '1px solid var(--border-subtle)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'rgba(17, 17, 22, 0.95)'
+            background: 'rgba(15, 15, 22, 0.98)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <Film size={18} className="text-blue-400" />
-            <h3
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div
               style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '1.15rem',
-                fontWeight: '700',
-                color: '#ffffff'
+                width: '2rem',
+                height: '2rem',
+                borderRadius: '0.4rem',
+                background: 'rgba(59, 130, 246, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#60a5fa'
               }}
             >
-              {video.title}
-            </h3>
+              <Film size={16} />
+            </div>
+            <div>
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.15rem',
+                  fontWeight: '700',
+                  color: '#ffffff'
+                }}
+              >
+                {video.title}
+              </h3>
+              <div
+                style={{
+                  fontSize: '0.75rem',
+                  color: 'var(--text-muted)',
+                  fontFamily: 'var(--font-mono)'
+                }}
+              >
+                {video.category} • Duration: {video.duration}
+              </div>
+            </div>
           </div>
 
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close Video Viewer"
-            style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '50%',
-              width: '2.25rem',
-              height: '2.25rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              cursor: 'pointer'
-            }}
-          >
-            <X size={18} />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            {/* Direct Fullscreen Button */}
+            <button
+              type="button"
+              onClick={handleFullscreen}
+              aria-label="Toggle Fullscreen"
+              title="Fullscreen Video"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '50%',
+                width: '2.5rem',
+                height: '2.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#ffffff',
+                cursor: 'pointer'
+              }}
+            >
+              <Maximize2 size={16} />
+            </button>
+
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close Video Viewer"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '50%',
+                width: '2.5rem',
+                height: '2.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#ffffff',
+                cursor: 'pointer'
+              }}
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
-        {/* Video Player Box */}
+        {/* Cinematic Video Player Window */}
         <div
           style={{
             background: '#000000',
@@ -89,7 +157,8 @@ export default function VideoModal({ video, onClose }) {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            padding: '0.5rem'
+            padding: '0.5rem',
+            minHeight: isVertical ? '500px' : '480px'
           }}
         >
           <video
@@ -98,41 +167,29 @@ export default function VideoModal({ video, onClose }) {
             poster={video.poster}
             controls
             playsInline
-            preload="metadata"
+            autoPlay
+            preload="auto"
             style={{
               width: '100%',
-              maxHeight: isVertical ? '70vh' : '65vh',
-              borderRadius: '0.5rem',
+              maxHeight: isVertical ? '72vh' : '68vh',
+              borderRadius: '0.75rem',
               objectFit: 'contain',
-              backgroundColor: '#000000'
+              backgroundColor: '#000000',
+              outline: 'none'
             }}
           >
             Your browser does not support the video tag.
           </video>
         </div>
 
-        {/* Video Information & Highlights */}
-        <div style={{ padding: '1.75rem' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '0.75rem',
-              fontSize: '0.8rem',
-              fontFamily: 'var(--font-mono)'
-            }}
-          >
-            <span style={{ color: 'var(--accent-blue)' }}>{video.category}</span>
-            <span style={{ color: 'var(--text-muted)' }}>Duration: {video.duration}</span>
-          </div>
-
+        {/* Video Info Strip */}
+        <div style={{ padding: '1.5rem 2rem', background: '#0e0e14' }}>
           <p
             style={{
               fontSize: '0.95rem',
               color: 'var(--text-secondary)',
               lineHeight: '1.6',
-              marginBottom: '1.25rem'
+              marginBottom: '1rem'
             }}
           >
             {video.description}
@@ -144,13 +201,13 @@ export default function VideoModal({ video, onClose }) {
                 <span
                   key={h}
                   style={{
-                    fontSize: '0.72rem',
+                    fontSize: '0.75rem',
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--text-muted)',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    padding: '0.2rem 0.55rem',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    padding: '0.25rem 0.6rem',
                     borderRadius: '4px',
-                    border: '1px solid rgba(255, 255, 255, 0.04)'
+                    border: '1px solid rgba(255, 255, 255, 0.05)'
                   }}
                 >
                   {h}
