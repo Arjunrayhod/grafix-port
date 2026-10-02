@@ -21,22 +21,22 @@ export const projects = [
     role: "Product UI/UX, Brand Identity, Visual Marketing",
     tools: ["Figma", "Adobe Photoshop", "Illustrator"],
     accentColor: "#2563eb",
-    coverImage: "/assets/projects/cloudbus-app-poster.jpeg",
+    coverImage: "./assets/projects/cloudbus-app-poster.jpeg",
     gallery: [
       {
-        url: "/assets/projects/cloudbus-app-poster.jpeg",
+        url: "./assets/projects/cloudbus-app-poster.jpeg",
         caption: "CloudBus Mobile App Presentation: E-Tickets, Student Concession & Digital Pass"
       },
       {
-        url: "/assets/projects/cloudbus-ui-helpdesk.jpeg",
+        url: "./assets/projects/cloudbus-ui-helpdesk.jpeg",
         caption: "Passenger Help & Query Desk: Chat Interface, Support Badges, and Mobile Flow"
       },
       {
-        url: "/assets/projects/cloudbus-icon.jpeg",
+        url: "./assets/projects/cloudbus-icon.jpeg",
         caption: "Official App Icon Mark: Gradient Squircle & Vector Bus Glyph"
       },
       {
-        url: "/assets/projects/cloudbus-lockup.jpeg",
+        url: "./assets/projects/cloudbus-lockup.jpeg",
         caption: "Horizontal Header Brand Lockup & Dark-Mode Navigation Mark"
       }
     ],
@@ -66,10 +66,10 @@ export const projects = [
     role: "Brand Identity Designer",
     tools: ["Adobe Illustrator", "Figma", "Photoshop"],
     accentColor: "#f97316",
-    coverImage: "/assets/logos/master-logo-grid.png",
+    coverImage: "./assets/logos/master-logo-grid.png",
     gallery: [
       {
-        url: "/assets/logos/master-logo-grid.png",
+        url: "./assets/logos/master-logo-grid.png",
         caption: "Master Folio: DukaanPilot, Nuvora, CloudDataGuard, Brewora, Flexora, Aivora, Vidzen, Luméa, Nexora"
       }
     ],
@@ -100,14 +100,14 @@ export const projects = [
     role: "Brand Identity, Visual Assets, Presentation Design",
     tools: ["Figma", "Adobe Illustrator", "Photoshop"],
     accentColor: "#0284c7",
-    coverImage: "/assets/logos/master-logo-grid.png",
+    coverImage: "./assets/logos/master-logo-grid.png",
     gallery: [
       {
-        url: "/assets/logos/master-logo-grid.png",
+        url: "./assets/logos/master-logo-grid.png",
         caption: "DukaanPilot Master Logomark ('Sell Smarter') Featured in Brand Identity Matrix"
       }
     ],
-    videoUrl: "/assets/videos/arjun-video-1.mp4",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
     hasCaseStudy: true,
     caseStudyId: "dukaanpilot-brand-system",
     challenge: "Traditional retail software interfaces are cluttered, intimidating, and lack modern visual sophistication. The challenge was to create an identity that feels cutting-edge (AI-driven) yet approachable and grounded for everyday store operators.",
@@ -134,10 +134,10 @@ export const projects = [
     role: "Web Design, Product UI, Visual Identity",
     tools: ["Figma", "Illustrator", "Photoshop"],
     accentColor: "#06b6d4",
-    coverImage: "/assets/logos/master-logo-grid.png",
+    coverImage: "./assets/logos/master-logo-grid.png",
     gallery: [
       {
-        url: "/assets/logos/master-logo-grid.png",
+        url: "./assets/logos/master-logo-grid.png",
         caption: "CloudDataGuard Hexagonal Security Shield Mark ('Your Data. Our Priority')"
       }
     ],
@@ -166,10 +166,10 @@ export const projects = [
     role: "Graphic Designer, Creative Content Specialist",
     tools: ["Photoshop", "Illustrator"],
     accentColor: "#ef4444",
-    coverImage: "/assets/projects/social-cloud-carousel.jpeg",
+    coverImage: "./assets/projects/social-cloud-carousel.jpeg",
     gallery: [
       {
-        url: "/assets/projects/social-cloud-carousel.jpeg",
+        url: "./assets/projects/social-cloud-carousel.jpeg",
         caption: "Hook Slide: 'These Three Projects Will Actually Change The Cloud Industry'"
       }
     ],
@@ -198,10 +198,10 @@ export const projects = [
     role: "Graphic Designer",
     tools: ["Photoshop", "Lightroom"],
     accentColor: "#a3a3a3",
-    coverImage: "/assets/projects/focus-poster.jpg",
+    coverImage: "./assets/projects/focus-poster.jpg",
     gallery: [
       {
-        url: "/assets/projects/focus-poster.jpg",
+        url: "./assets/projects/focus-poster.jpg",
         caption: "FOCUS High-Contrast Monochrome Editorial Poster"
       }
     ],
@@ -230,14 +230,14 @@ export const projects = [
     role: "Video Editor, Colorist, Sound Designer",
     tools: ["Premiere Pro", "DaVinci Resolve", "After Effects"],
     accentColor: "#8b5cf6",
-    coverImage: "/assets/hero/hero-isometric.png",
+    coverImage: "./assets/hero/hero-isometric.png",
     gallery: [
       {
-        url: "/assets/hero/hero-isometric.png",
+        url: "./assets/hero/hero-isometric.png",
         caption: "Motion & Video Layer Breakdown"
       }
     ],
-    videoUrl: "/assets/videos/arjun-video-1.mp4",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
     hasCaseStudy: false,
     challenge: "Maintaining continuous viewer excitement through tight pacing without causing sensory overload.",
     approach: "Applied disciplined rhythm cuts, customized riser audio, and seamless motion bridges.",
@@ -262,14 +262,14 @@ export const projects = [
     role: "Video Editor & Motion Designer",
     tools: ["Premiere Pro", "CapCut Pro", "After Effects"],
     accentColor: "#ec4899",
-    coverImage: "/assets/logos/master-logo-grid.png",
+    coverImage: "./assets/logos/master-logo-grid.png",
     gallery: [
       {
-        url: "/assets/logos/master-logo-grid.png",
+        url: "./assets/logos/master-logo-grid.png",
         caption: "Branding Elements Integrated into Motion Sequences"
       }
     ],
-    videoUrl: "/assets/videos/arjun-video-2.mp4",
+    videoUrl: "./assets/videos/arjun-video-2.mp4",
     hasCaseStudy: false,
     challenge: "Seamlessly fusing vector branding and motion graphics with real-world video footage.",
     approach: "Synchronized key motion elements with audio cues and applied consistent color temperature grading.",

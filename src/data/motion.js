@@ -15,8 +15,8 @@ export const motionItems = [
     tools: ["After Effects", "Illustrator"],
     fps: "60 FPS",
     duration: "4.2s",
-    previewImage: "/assets/logos/master-logo-grid.png",
-    videoUrl: "/assets/videos/arjun-video-1.mp4",
+    previewImage: "./assets/logos/master-logo-grid.png",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
     aspectRatio: "16:9",
     techniques: ["Shape Layer Morphing", "Trim Paths", "Custom Graph Easing", "Subtle Glow Pass"]
   },
@@ -28,8 +28,8 @@ export const motionItems = [
     tools: ["After Effects", "Photoshop"],
     fps: "60 FPS",
     duration: "5.0s",
-    previewImage: "/assets/hero/hero-isometric.png",
-    videoUrl: "/assets/videos/arjun-video-1.mp4",
+    previewImage: "./assets/hero/hero-isometric.png",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
     aspectRatio: "16:9",
     techniques: ["Isometric Projection", "Depth Lighting", "Camera Null Rigging", "Motion Blur"]
   },
@@ -41,8 +41,8 @@ export const motionItems = [
     tools: ["Figma", "After Effects"],
     fps: "60 FPS",
     duration: "6.0s",
-    previewImage: "/assets/projects/cloudbus-ui-helpdesk.jpeg",
-    videoUrl: "/assets/videos/arjun-video-2.mp4",
+    previewImage: "./assets/projects/cloudbus-ui-helpdesk.jpeg",
+    videoUrl: "./assets/videos/arjun-video-2.mp4",
     aspectRatio: "9:16",
     techniques: ["Component State Animation", "Spring Easing", "Bezier Velocity Curves"]
   },
@@ -54,8 +54,8 @@ export const motionItems = [
     tools: ["After Effects", "Photoshop"],
     fps: "60 FPS",
     duration: "3.5s",
-    previewImage: "/assets/projects/focus-poster.jpg",
-    videoUrl: "/assets/videos/arjun-video-2.mp4",
+    previewImage: "./assets/projects/focus-poster.jpg",
+    videoUrl: "./assets/videos/arjun-video-2.mp4",
     aspectRatio: "16:9",
     techniques: ["Text Animators", "Displacement Mapping", "Rhythmic Beat Easing"]
   },
@@ -67,8 +67,8 @@ export const motionItems = [
     tools: ["Photoshop", "After Effects"],
     fps: "60 FPS",
     duration: "4.0s loop",
-    previewImage: "/assets/projects/social-cloud-carousel.jpeg",
-    videoUrl: "/assets/videos/arjun-video-1.mp4",
+    previewImage: "./assets/projects/social-cloud-carousel.jpeg",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
     aspectRatio: "1:1",
     techniques: ["Particle Float", "Dynamic Shadows", "Stop-Rate Hook Pacing"]
   }

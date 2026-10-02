@@ -233,7 +233,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
               >
                 {/* Visual Art Layer */}
                 <img
-                  src="/assets/hero/hero-isometric.png"
+                  src="./assets/hero/hero-isometric.png"
                   alt="3D Layer Design by Arjun Rathod"
                   style={{
                     width: '65%',
