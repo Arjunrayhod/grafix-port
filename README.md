@@ -46,7 +46,7 @@ Live Repository: [https://github.com/Arjunrayhod/grafix-port](https://github.com
    - 5-Stage Methodology: 01 Understand → 02 Explore → 03 Design → 04 Refine → 05 Deliver.
 
 7. **Direct Inquiry & Contact**:
-   - Click-to-copy email badge (`arjunrathod.creative@gmail.com`).
+   - Click-to-copy email badge (`arjun9009rathod@gmail.com`).
    - Direct links to LinkedIn and GitHub.
    - Interactive inquiry form that automatically prepares a pre-filled mailto draft.
 

@@ -12,7 +12,7 @@ export const personalInfo = {
   },
   availability: "Available for freelance & creative opportunities",
   contact: {
-    email: "arjunrathod.creative@gmail.com", // Placeholder: Arjun can update with his exact email
+    email: "arjun9009rathod@gmail.com",
     linkedin: "https://linkedin.com/in/arjunrathod",
     github: "https://github.com/Arjunrayhod/grafix-port",
     instagram: "https://instagram.com/arjunrathod",
