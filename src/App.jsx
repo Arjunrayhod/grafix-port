@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Navbar from './components/common/Navbar';
 import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Services from './components/sections/Services';
+import PowerProjects from './components/sections/PowerProjects';
 import FeaturedWork from './components/sections/FeaturedWork';
+import Services from './components/sections/Services';
 import VideoPortfolio from './components/sections/VideoPortfolio';
 import MotionGraphics from './components/sections/MotionGraphics';
 import CaseStudies from './components/sections/CaseStudies';
 import WorkProcess from './components/sections/WorkProcess';
+import About from './components/sections/About';
 import Contact from './components/sections/Contact';
 import Footer from './components/common/Footer';
 import ProjectModal from './components/common/ProjectModal';
@@ -38,20 +39,32 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main>
+        {/* Section A: Hero Section */}
         <Hero
           onOpenProject={(proj) => setSelectedProject(proj)}
           onOpenVideo={(vid) => setSelectedVideo(vid)}
         />
+
+        {/* Section B: Show Your Power (Vault Guard, Cloud Data Guard, Video & Motion Reel) */}
+        <PowerProjects
+          onOpenLightbox={handleOpenLightbox}
+          onPlayVideo={(vid) => setSelectedVideo(vid)}
+        />
+
+        {/* Extended Split Screen Cinema & App Showcase */}
         <FeaturedWork
           onSelectProject={(proj) => setSelectedProject(proj)}
           onOpenLightbox={handleOpenLightbox}
         />
+
         <Services />
         <VideoPortfolio onPlayVideo={(vid) => setSelectedVideo(vid)} />
         <MotionGraphics onPlayVideo={(vid) => setSelectedVideo(vid)} />
         <CaseStudies onOpenImageLightbox={handleOpenLightbox} />
         <WorkProcess />
         <About />
+
+        {/* Section C: Transparent Contact Anchor (24h Prototype Guarantee) */}
         <Contact />
       </main>
 

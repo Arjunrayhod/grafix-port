@@ -1,59 +1,128 @@
 export const projectCategories = [
   "All",
-  "Branding",
-  "UI / Web",
-  "Graphic Design",
-  "Video Editing"
+  "Web & Security",
+  "App Development",
+  "Video & Motion",
+  "Branding & Design"
+];
+
+export const powerProjects = [
+  {
+    id: "vault-guard-system",
+    title: "Vault Guard System",
+    category: "Web & Security",
+    secondaryCategory: "Full-Stack Web",
+    typeBadge: "CodeAlpha Security Project",
+    tagline: "Encryption-based Web Protection Layer / 2FA / SQL Injection Proofing",
+    writeUp: "Designed an encryption-based web protection layer with 2FA and SQL injection proofing, locking site safety to 90%.",
+    shortDescription: "Designed an encryption-based web protection layer with 2FA and SQL injection proofing, locking site safety to 90%.",
+    fullDescription: "Engineered as an enterprise-grade cybersecurity layer during CodeAlpha training, Vault Guard provides a multi-stage defense architecture. It features AES-256 payload encryption, strict two-factor authentication (2FA), parameterized database queries to eliminate SQL injection attacks, and automated threat session lockdown.",
+    year: "2026",
+    role: "Lead Security & Full-Stack Developer",
+    metrics: [
+      { label: "Site Safety Rating", value: "90%" },
+      { label: "SQLi Vulnerability", value: "0% (Proofed)" },
+      { label: "Auth Protocol", value: "2FA + AES-256" }
+    ],
+    highlights: [
+      "AES-256 payload encryption on sensitive data transport",
+      "Two-factor authentication (2FA) with time-based verification",
+      "Parameterized SQL query enforcement eliminating injection attacks",
+      "Automated session timeout and suspicious activity lockdown",
+      "Comprehensive audit logs and security dashboard"
+    ],
+    tools: ["React", "Node.js", "Express", "AES-256", "2FA / TOTP", "PostgreSQL", "Cybersecurity"],
+    accentColor: "#3b82f6",
+    coverImage: "./assets/projects/cloudbus-icon.jpeg",
+    githubUrl: "https://github.com/Arjunrayhod",
+    liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    videoTitle: "Vault Guard Security Protocol Demo"
+  },
+  {
+    id: "cloud-data-guard",
+    title: "Cloud Data Guard",
+    category: "Web & Security",
+    secondaryCategory: "Cloud & Backend",
+    typeBadge: "Automated Cloud Pipeline",
+    tagline: "Automated Secure Pipeline / Active Session Banning",
+    writeUp: "Built an automated secure pipeline preventing duplicate cloud entries with automated active session banning.",
+    shortDescription: "Built an automated secure pipeline preventing duplicate cloud entries with automated active session banning.",
+    fullDescription: "A resilient cloud security pipeline designed to ensure data deduplication and block unauthorized concurrency abuse. The system enforces SHA-256 idempotency hashing, drops duplicate payloads in real-time, and detects token misuse to immediately terminate and ban active malicious sessions.",
+    year: "2026",
+    role: "Cloud Backend & Security Architect",
+    metrics: [
+      { label: "Duplicate Entry Rate", value: "0.00%" },
+      { label: "Session Banning", value: "Instant Auto-Kill" },
+      { label: "Data Pipeline", value: "Real-Time Cloud" }
+    ],
+    highlights: [
+      "Zero-duplicate cloud pipeline with cryptographic idempotency checks",
+      "Automated active session banning on suspicious or concurrent token replay",
+      "Real-time event streaming and anomalous entry rejection",
+      "Rate-limited cloud endpoints protecting downstream microservices",
+      "Designed for cloud infrastructure (BCA Cloud Computing project)"
+    ],
+    tools: ["Cloud Computing", "Node.js", "Python", "Redis", "REST APIs", "Docker", "Cloud Security"],
+    accentColor: "#10b981",
+    coverImage: "./assets/projects/cloudbus-lockup.jpeg",
+    githubUrl: "https://github.com/Arjunrayhod",
+    liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
+    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    videoTitle: "Cloud Data Guard Pipeline Walkthrough"
+  },
+  {
+    id: "video-motion-reel",
+    title: "Video Editing & Motion Graphics Reel",
+    category: "Video & Motion",
+    secondaryCategory: "Video Editing",
+    typeBadge: "Commercial Showreel 2026",
+    tagline: "High-Retention Visual Storytelling / 4K Kinetic Motion",
+    writeUp: "Engineered high-retention video edits and motion graphics with fast-paced cuts, sound design, and 3D visual effects.",
+    shortDescription: "Direct operational video showcase featuring high-energy editing pacing, kinetic typography, and 3D motion design.",
+    fullDescription: "An all-in-one motion design and video editing showreel engineered for modern creators, agencies, and brands. Demonstrates retention-driven pacing, rhythmic audio sync, color grading, and After Effects kinetic title cards.",
+    year: "2026",
+    role: "Video Editor & Motion Designer",
+    metrics: [
+      { label: "Playback Format", value: "4K / 60 FPS" },
+      { label: "Retention Impact", value: "High Hook CTR" },
+      { label: "Tools", value: "Premiere + AE" }
+    ],
+    highlights: [
+      "Rhythmic retention-first video editing with seamless audio sync",
+      "Kinetic typography sequences with smooth easing curves",
+      "Custom motion graphics, logo reveals, and lower thirds",
+      "Color grading calibrated for modern OLED and mobile displays",
+      "Direct playable video stream embedded right inside portfolio"
+    ],
+    tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Photoshop", "Sound Design"],
+    accentColor: "#f59e0b",
+    coverImage: "./assets/projects/focus-poster.jpg",
+    youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    videoTitle: "Arjun Rathod Motion & Video Showreel",
+    githubUrl: "https://github.com/Arjunrayhod"
+  }
 ];
 
 export const projects = [
-  {
-    id: "master-brand-identities",
-    title: "Master Brand Identity Collection (9 Logos)",
-    category: "Branding",
-    secondaryCategory: "Graphic Design",
-    typeBadge: "Brand Identity Folio",
-    tagline: "DukaanPilot • CloudDataGuard • Brewora • Flexora • Vidzen • Luméa • Nexora",
-    shortDescription: "A curated collection of 9 distinct brand identities and vector logomarks spanning AI technology, cloud cybersecurity, artisan coffee, fitness, and video software.",
-    fullDescription: "A comprehensive brand identity portfolio engineered to demonstrate vector geometry, typography hierarchies, and distinctive industry positioning. From the organic curves of Luméa to the geometric origami wing of DukaanPilot and the isometric security shield of CloudDataGuard.",
-    year: "2026",
-    role: "Brand Identity Designer",
-    tools: ["Adobe Illustrator", "Figma", "Photoshop"],
-    accentColor: "#f97316",
-    coverImage: "./assets/logos/master-logo-grid.png",
-    gallery: [
-      {
-        url: "./assets/logos/master-logo-grid.png",
-        caption: "Master Folio: 9 Original Logomarks and Visual Identities"
-      }
-    ],
-    videoUrl: "./assets/videos/arjun-video-1.mp4", // Paired with video for split-screen autoplay!
-    videoTitle: "Brand & Logo Motion Reel",
-    hasCaseStudy: true,
-    caseStudyId: "dukaanpilot-brand-system",
-    challenge: "Demonstrating design versatility across vastly different industries while maintaining strict mathematical grid discipline.",
-    approach: "Explored unique metaphors for each company: folded navigation wing for retail AI, isometric shield for security, and steam-infused bean for coffee.",
-    designProcess: [
-      "Conceptual Discovery: Mapping brand voice and emotional tone.",
-      "Vector Construction in Illustrator: Geometric drafting with golden ratio nodes.",
-      "Typography Pairing: Pairing each symbol with bespoke display and grotesk typefaces."
-    ],
-    outcome: "A versatile identity portfolio proving complete grasp of modern brand system development and logo design craft."
-  },
+  ...powerProjects,
   {
     id: "cloudbus-transit-network",
-    title: "CloudBus — Smart Transit Network",
-    category: "UI / Web",
-    secondaryCategory: "Branding",
-    typeBadge: "Personal & Concept Project",
+    title: "CloudBus — Smart Transit & Ticketing Mobile App",
+    category: "App Development",
+    secondaryCategory: "Web & Security",
+    typeBadge: "Mobile App Maker Showcase",
     tagline: "Mobile App UI / Smart Transit / Digital E-Pass",
-    shortDescription: "Complete mobile product design and brand identity system for CloudBus — digital bus ticketing, student concession pass, and smart transit network.",
-    fullDescription: "As a BCA Cloud Computing student deeply passionate about user experience, I conceptualized and designed CloudBus to streamline bus travel for students and daily commuters. Features clear visual categorization, barcode pass scanning, and accessible typography.",
+    shortDescription: "Production-ready mobile product architecture for CloudBus — digital bus ticketing, student concession pass, and live route management.",
+    fullDescription: "As a BCA Cloud Computing student passionate about app creation, I engineered and designed CloudBus to streamline bus travel for students and daily commuters. Features streamlined 3-tap checkout, barcode ticket scanning, and accessible component hierarchies.",
     year: "2026",
-    role: "Product UI/UX, Visual Marketing",
-    tools: ["Figma", "Adobe Photoshop", "Illustrator"],
+    role: "Product App Designer & Prototype Maker",
+    tools: ["React Native / Figma", "Adobe Photoshop", "Illustrator"],
     accentColor: "#2563eb",
     coverImage: "./assets/projects/cloudbus-app-poster.jpeg",
+    githubUrl: "https://github.com/Arjunrayhod",
+    liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
     gallery: [
       {
         url: "./assets/projects/cloudbus-app-poster.jpeg",
@@ -68,112 +137,55 @@ export const projects = [
         caption: "Horizontal Header Brand Lockup"
       }
     ],
-    videoUrl: "./assets/videos/arjun-video-2.mp4", // Paired with video for split-screen autoplay!
-    videoTitle: "CloudBus Dynamic Motion & UI Flow",
+    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    videoTitle: "CloudBus Mobile App Flow & Screen Walkthrough",
     hasCaseStudy: false,
-    challenge: "Public transit booking apps are often cluttered and confusing for daily commuters on the go.",
-    approach: "Designed a friendly blue gradient identity with high-contrast touch targets, quick concession access, and bold headline hierarchy.",
-    designProcess: [
-      "User Flow Mapping: Streamlining pass purchase to under 3 taps.",
-      "High-Fidelity Prototyping: Creating scalable mobile components in Figma.",
-      "Marketing Collateral: Designing high-converting app showcase posters."
-    ],
+    challenge: "Transit booking apps often fail users due to clutter and complicated navigation during rush hours.",
+    approach: "Engineered high-contrast touch targets, fast student concession workflows, and instant barcode generation.",
     outcome: "A production-grade mobile app showcase bridging cloud infrastructure with consumer UI design."
   },
   {
-    id: "cloudbus-ui-helpdesk",
-    title: "CloudBus — Help Desk & Live Chat UI",
-    category: "UI / Web",
-    secondaryCategory: "Branding",
-    typeBadge: "Mobile App UI",
-    tagline: "Passenger Help & Query Desk / Conversational UI",
-    shortDescription: "Interactive 24/7 passenger support desk interface with category filters, multi-lingual queries, and conversational chat bubbles.",
-    fullDescription: "An in-depth UI design for the CloudBus passenger query desk. Enables commuters to receive instant support for route delays, student passes, and ticket inquiries with dedicated support team status badges.",
+    id: "master-brand-identities",
+    title: "Master Brand Identity Folio (9 Logos)",
+    category: "Branding & Design",
+    secondaryCategory: "Design",
+    typeBadge: "Brand Identity Folio",
+    tagline: "DukaanPilot • CloudDataGuard • Brewora • Vidzen • Luméa",
+    shortDescription: "A curated collection of 9 distinct brand systems and vector logomarks spanning AI tech, cloud cybersecurity, and video software.",
+    fullDescription: "A comprehensive brand identity portfolio engineered to demonstrate vector geometry, typography hierarchies, and distinctive industry positioning.",
     year: "2026",
-    role: "UI/UX Designer",
-    tools: ["Figma", "Photoshop"],
-    accentColor: "#3b82f6",
-    coverImage: "./assets/projects/cloudbus-ui-helpdesk.jpeg",
+    role: "Brand Identity Designer",
+    tools: ["Adobe Illustrator", "Figma", "Photoshop"],
+    accentColor: "#f97316",
+    coverImage: "./assets/logos/master-logo-grid.png",
+    githubUrl: "https://github.com/Arjunrayhod",
     gallery: [
       {
-        url: "./assets/projects/cloudbus-ui-helpdesk.jpeg",
-        caption: "Passenger Help & Query Desk: Chat Interface & Mobile Flow"
+        url: "./assets/logos/master-logo-grid.png",
+        caption: "Master Folio: 9 Original Logomarks and Visual Identities"
       }
     ],
     videoUrl: "./assets/videos/arjun-video-1.mp4",
-    videoTitle: "Interactive UI & Micro-Interaction Reel",
-    hasCaseStudy: false,
-    challenge: "Designing a mobile support desk that feels responsive, friendly, and non-intimidating for users during transit emergencies.",
-    approach: "Structured conversational chat with clear user vs agent message bubbles, category dropdowns, and reassurance badges.",
-    designProcess: [
-      "Information Hierarchy: Prioritizing common pass questions and quick answers.",
-      "Color & Visual Tokens: Trust-inspiring navy and sky blue color palettes.",
-      "Mobile Squint Test: Ensuring legibility under direct sunlight."
-    ],
-    outcome: "An accessible, friendly support interface that improves passenger satisfaction and reduces inquiry friction."
+    videoTitle: "Brand & Logo Motion Reel",
+    hasCaseStudy: true,
+    outcome: "A versatile identity portfolio proving complete grasp of modern brand systems."
   },
   {
     id: "focus-editorial-poster",
     title: "FOCUS — High-Contrast Editorial Graphic Poster",
-    category: "Graphic Design",
-    secondaryCategory: "Branding",
+    category: "Branding & Design",
+    secondaryCategory: "Design",
     typeBadge: "Editorial Graphic Design",
     tagline: "Monochrome Poster / Typography / Dramatic Lighting",
     shortDescription: "Dramatic monochrome typography poster combining heavy textured display lettering with sculpted silhouette lighting.",
-    fullDescription: "An exploration of international typographic style and intense contrast lighting. The poster demonstrates tight spatial interaction between background typography ('FOCUS'), textured concrete typography, and anatomical silhouette.",
+    fullDescription: "An exploration of international typographic style and intense contrast lighting with deep obsidian blacks.",
     year: "2026",
     role: "Graphic Designer",
     tools: ["Photoshop", "Lightroom"],
     accentColor: "#e4e4e7",
     coverImage: "./assets/projects/focus-poster.jpg",
-    gallery: [
-      {
-        url: "./assets/projects/focus-poster.jpg",
-        caption: "FOCUS High-Contrast Monochrome Editorial Poster"
-      }
-    ],
     videoUrl: "./assets/videos/arjun-video-2.mp4",
     videoTitle: "Kinetic Poster & Lighting Reel",
-    hasCaseStudy: false,
-    challenge: "Creating commanding visual drama and depth using exclusively black, white, and grayscale tonal values.",
-    approach: "Intertwined condensed typography behind the subject's silhouette while preserving typographic legibility through edge lighting.",
-    designProcess: [
-      "Subject Lighting & Edge Masking: High-precision tonal masking in Photoshop.",
-      "Typography Placement: Heavy sans-serif display lettering with concrete texture maps.",
-      "Contrast Calibration: Preserving specular highlights against deep obsidian blacks."
-    ],
-    outcome: "A commanding print and digital poster proving advanced Photoshop lighting, masking, and typography craft."
-  },
-  {
-    id: "cloud-industry-carousel",
-    title: "Cloud Industry Insights — Social Media Hook",
-    category: "Graphic Design",
-    secondaryCategory: "UI / Web",
-    typeBadge: "Social & Carousel Design",
-    tagline: "High-CTR Visual / 3D Asset Composition / Social Carousel",
-    shortDescription: "High-engagement social media visual hook and carousel slide designed for tech founders and cloud computing developers.",
-    fullDescription: "A high-impact social media creative engineered around modern scroll-stop psychology ('These three projects will change the cloud industry'). Features 3D brain assets, realistic drop shadows, and clean directional prompting.",
-    year: "2026",
-    role: "Graphic Designer, Content Specialist",
-    tools: ["Photoshop", "Illustrator"],
-    accentColor: "#ef4444",
-    coverImage: "./assets/projects/social-cloud-carousel.jpeg",
-    gallery: [
-      {
-        url: "./assets/projects/social-cloud-carousel.jpeg",
-        caption: "Hook Slide: 'These Three Projects Will Actually Change The Cloud Industry'"
-      }
-    ],
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
-    videoTitle: "Social Hook & Dynamic Asset Reel",
-    hasCaseStudy: false,
-    challenge: "Capturing user attention in dense LinkedIn and social feeds where readers scroll past within 1.5 seconds.",
-    approach: "High-contrast typography, realistic floating 3D elements, and clean editorial whitespace.",
-    designProcess: [
-      "Curiosity Hook Formulation: Developing an authoritative question.",
-      "Asset Lighting & Shadow Mapping: Compositing 3D brain and currency depth.",
-      "Mobile Scale Testing: Verifying that text is 100% readable on small screens."
-    ],
-    outcome: "A scroll-stopping visual hook that elevates technical cloud topics into premium, shareable visual media."
+    outcome: "A commanding print and digital poster proving advanced lighting, masking, and typography craft."
   }
 ];

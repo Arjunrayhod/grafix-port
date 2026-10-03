@@ -1,27 +1,30 @@
 export const personalInfo = {
   name: "Arjun Rathod",
-  roleTitle: "Graphic Designer | Brand & Visual Designer | Video Editor | Motion Graphics",
-  tagline: "Designing Ideas Into Visual Experiences.",
-  heroSubtext: "Graphic designer, brand designer, video editor, and motion creative focused on building clean, engaging visuals for modern brands and digital products.",
-  shortBio: "I'm Arjun Rathod, a creative designer focused on graphic design, visual identity, video editing, and motion graphics. I enjoy turning simple ideas into clear, engaging, and consistent visual experiences.",
+  roleTitle: "Full-Stack Web Developer, App Maker & Video Editor",
+  tagline: "Helping businesses and creators automate their operations and scale their content with zero-hardware friction.",
+  heroHeading: "Arjun Rathod | Full-Stack Web Developer, App Maker & Video Editor",
+  heroSubtext: "Helping businesses and creators automate their operations and scale their content with zero-hardware friction.",
+  shortBio: "I'm Arjun Rathod — a Full-Stack Web Developer, App Maker, and Video Editor. With hands-on expertise in Cloud Computing and cybersecurity development (including CodeAlpha security systems, Vault Guard, and Cloud Data Guard), I build resilient web platforms, production-ready apps, and high-retention video content.",
   education: {
     degree: "BCA — Cloud Computing",
     institution: "Mandsaur University",
     status: "Undergraduate",
-    note: "Bridging the gap between modern cloud technologies and high-impact visual design systems."
+    note: "Specialized in cloud architecture, full-stack application development, and web application security pipelines."
   },
-  availability: "Available for freelance & creative opportunities",
+  availability: "Available for full-time roles, contracts & 24h prototypes",
   contact: {
     email: "arjun9009rathod@gmail.com",
+    whatsapp: "https://wa.me/?text=Hi%20Arjun,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20hire%20you%20for%20a%20project!",
     linkedin: "https://linkedin.com/in/arjunrathod",
-    github: "https://github.com/Arjunrayhod/grafix-port",
+    github: "https://github.com/Arjunrayhod",
     instagram: "https://instagram.com/arjunrathod",
     behance: "https://behance.net/arjunrathod",
     location: "India"
   },
   stats: [
-    { label: "Design Disciplines", value: "4 Core Fields" },
-    { label: "Focus Areas", value: "Brand, Motion & Digital" },
-    { label: "Background", value: "BCA Cloud Computing" }
+    { label: "Security Lockdown", value: "90% Site Safety" },
+    { label: "Prototype Delivery", value: "24h Rapid Turnaround" },
+    { label: "Technical Domains", value: "Web, App & Cloud Security" },
+    { label: "Content Production", value: "4K / 60 FPS Motion" }
   ]
 };

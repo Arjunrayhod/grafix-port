@@ -1,13 +1,25 @@
 import React from 'react';
-import { User, GraduationCap, Cpu, Palette, Sparkles, CheckCircle2 } from 'lucide-react';
+import { User, GraduationCap, ShieldCheck, Code, Smartphone, Film, CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../../data/personal';
 
 export default function About() {
   const coreCompetencies = [
-    { title: 'Brand & Visual Systems', desc: 'Vector logomarks, color architecture, typography guidelines, and complete identity guidelines.' },
-    { title: 'Graphic & Social Design', desc: 'High-CTR YouTube thumbnails, LinkedIn carousels, editorial posters, and digital marketing banners.' },
-    { title: 'Video Editing & Pacing', desc: 'Retention-optimized cuts, rhythmic sound design, match cuts, and color correction in Premiere & DaVinci.' },
-    { title: 'Motion Graphics', desc: 'Kinetic typography, animated logo stings, UI micro-interactions, and social video overlays.' }
+    {
+      title: 'Full-Stack Web & Cybersecurity',
+      desc: 'Building hardened web applications with React, Node.js, AES-256 payload encryption, 2FA, and parameterized SQL injection proofing (CodeAlpha certified projects).'
+    },
+    {
+      title: 'Mobile App Making & Prototyping',
+      desc: 'Architecting end-to-end mobile products like CloudBus — featuring 3-tap ticketing flows, concession cards, and conversational support desks.'
+    },
+    {
+      title: 'Cloud Architecture & Pipelines',
+      desc: 'BCA in Cloud Computing at Mandsaur University. Implementing automated cloud ingestion pipelines with session banning and zero-duplicate guarantees.'
+    },
+    {
+      title: 'Video Editing & Retention Motion',
+      desc: 'High-energy 4K/60FPS video reels, retention-optimized pacing, kinetic typography in After Effects, and sound design that converts viewers into fans.'
+    }
   ];
 
   return (
@@ -15,7 +27,7 @@ export default function About() {
       <div className="container-custom">
         <div className="section-tag">
           <User size={13} />
-          <span>About Arjun</span>
+          <span>Engineering & Creative Background</span>
         </div>
 
         <div
@@ -30,7 +42,7 @@ export default function About() {
           {/* Left Column: Personal Introduction & Background */}
           <div>
             <h2 className="section-title">
-              Crafting clear, engaging visual experiences from the ground up.
+              Bridging engineering precision with high-converting digital media.
             </h2>
 
             <p
@@ -52,7 +64,7 @@ export default function About() {
                 marginBottom: '2rem'
               }}
             >
-              I believe great design is not just ornamentation — it's clear communication, visual hierarchy, and emotional resonance. Whether I am crafting a bold new logomark, editing a fast-paced video cut, or producing kinetic text for a digital campaign, my focus is always on making the work feel intentional, polished, and human.
+              Clients and creators need results fast without operational headaches. By uniting full-stack software development, cloud security pipelines, and modern video editing, I deliver complete end-to-end solutions — from secure web platforms to high-retention social content.
             </p>
 
             {/* Education Highlight Card */}
@@ -142,8 +154,8 @@ export default function About() {
                 gap: '0.5rem'
               }}
             >
-              <Palette size={18} className="text-blue-400" />
-              <span>Core Disciplines & Working Principles</span>
+              <ShieldCheck size={18} className="text-blue-400" />
+              <span>Core Technical & Creative Pillars</span>
             </div>
 
             {coreCompetencies.map((comp, idx) => (

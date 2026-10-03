@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowDown, ArrowUpRight, Sparkles, Play, Layers, Eye } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Sparkles, ShieldCheck, Terminal, Smartphone, Film, CheckCircle2, MessageCircle, Mail } from 'lucide-react';
+import { GithubIcon } from '../common/Icons';
 import { personalInfo } from '../../data/personal';
 
 export default function Hero({ onOpenProject, onOpenVideo }) {
@@ -18,12 +19,12 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
 
   return (
     <section
-      className="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-radial-gradient bg-studio-grid"
+      className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-radial-gradient bg-studio-grid"
       style={{
         position: 'relative',
-        paddingTop: '8rem',
+        paddingTop: '7.5rem',
         paddingBottom: '5rem',
-        minHeight: '90vh',
+        minHeight: '92vh',
         display: 'flex',
         alignItems: 'center'
       }}
@@ -38,35 +39,39 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
           }}
           className="hero-grid"
         >
-          {/* Left Column: Editorial Headline & Copy */}
+          {/* Left Column: Direct High-Impact Editorial Copy */}
           <div>
-            {/* Tagline Badge */}
+            {/* Direct Verification Badge */}
             <div
               className="section-tag"
               style={{
-                marginBottom: '1.5rem',
+                marginBottom: '1.25rem',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.5rem'
+                gap: '0.5rem',
+                background: 'rgba(59, 130, 246, 0.1)',
+                border: '1px solid rgba(59, 130, 246, 0.3)'
               }}
             >
-              <Sparkles size={14} className="text-blue-400" />
-              <span>Brand • Motion • Video • Digital</span>
+              <ShieldCheck size={14} className="text-blue-400" />
+              <span style={{ color: '#93c5fd', fontWeight: '600' }}>
+                CodeAlpha Security Projects • Cloud Computing • Video Engineering
+              </span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline Exactly as Requested */}
             <h1
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)',
+                fontSize: 'clamp(2.3rem, 4.6vw, 4.1rem)',
                 fontWeight: '800',
-                lineHeight: '1.08',
-                letterSpacing: '-0.04em',
+                lineHeight: '1.12',
+                letterSpacing: '-0.035em',
                 color: '#ffffff',
-                marginBottom: '1.5rem'
+                marginBottom: '1.35rem'
               }}
             >
-              Designing Ideas Into{' '}
+              Arjun Rathod |{' '}
               <span
                 style={{
                   background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #93c5fd 100%)',
@@ -75,53 +80,142 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                   display: 'inline-block'
                 }}
               >
-                Visual Experiences.
-              </span>
+                Full-Stack Web Developer,
+              </span>{' '}
+              App Maker & Video Editor
             </h1>
 
-            {/* Supporting Text */}
+            {/* Sub-headline / Value Proposition Exactly as Requested */}
             <p
               style={{
-                fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
-                lineHeight: '1.65',
-                color: 'var(--text-secondary)',
-                maxWidth: '38rem',
-                marginBottom: '2.5rem',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
+                lineHeight: '1.6',
+                color: '#d4d4d8',
+                maxWidth: '42rem',
+                marginBottom: '2rem',
                 fontWeight: '400'
               }}
             >
-              {personalInfo.heroSubtext}
+              Helping businesses and creators automate their operations and scale their content with zero-hardware friction.
             </p>
 
-            {/* Call To Action Buttons */}
+            {/* Achievement Highlights Checklist */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '0.75rem',
+                marginBottom: '2.5rem'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+                <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
+                <span><strong>Vault Guard:</strong> 2FA & SQLi Proofing (90% Safe)</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+                <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
+                <span><strong>Cloud Data Guard:</strong> Active Session Banning</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+                <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
+                <span><strong>App Making:</strong> CloudBus Transit Platform</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+                <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
+                <span><strong>Video & Motion:</strong> 4K / 60 FPS High-Retention Reels</span>
+              </div>
+            </div>
+
+            {/* High-Converting Call To Action Buttons (Instant WhatsApp + Email + Projects) */}
             <div
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 gap: '1rem',
-                marginBottom: '3rem'
+                marginBottom: '2.5rem'
               }}
             >
+              {/* Primary Direct Hire Me Button */}
+              <a
+                href={personalInfo.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{
+                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                  padding: '0.8rem 1.6rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '700',
+                  boxShadow: '0 8px 25px rgba(37, 99, 235, 0.4)'
+                }}
+              >
+                <MessageCircle size={18} />
+                <span>Hire Me (WhatsApp)</span>
+              </a>
+
+              {/* Direct Email Hire Button */}
+              <a
+                href={`mailto:${personalInfo.contact.email}?subject=Project%20Inquiry%20-%20Full-Stack%20Web%20%2F%20App%20%2F%20Video`}
+                className="btn-secondary"
+                style={{
+                  padding: '0.8rem 1.4rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)'
+                }}
+              >
+                <Mail size={17} />
+                <span>Direct Email</span>
+              </a>
+
+              {/* View Projects Grid */}
               <button
                 type="button"
-                onClick={() => scrollToSection('#work')}
-                className="btn-primary"
-                style={{ cursor: 'pointer' }}
+                onClick={() => scrollToSection('#power-projects')}
+                className="btn-secondary"
+                style={{
+                  padding: '0.8rem 1.25rem',
+                  fontSize: '0.9rem',
+                  cursor: 'pointer'
+                }}
               >
-                <span>View My Work</span>
-                <ArrowDown size={17} />
+                <span>View Power Projects</span>
+                <ArrowDown size={16} />
               </button>
 
-              <button
-                type="button"
-                onClick={() => scrollToSection('#contact')}
-                className="btn-secondary"
-                style={{ cursor: 'pointer' }}
+              {/* GitHub Repos Button */}
+              <a
+                href={personalInfo.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  padding: '0.8rem 1.15rem',
+                  borderRadius: '0.55rem',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid var(--border-subtle)',
+                  color: 'var(--text-secondary)',
+                  fontSize: '0.88rem',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease, border-color 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#ffffff';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                }}
               >
-                <span>Let's Work Together</span>
-                <ArrowUpRight size={17} />
-              </button>
+                <GithubIcon size={16} />
+                <span>GitHub Repos</span>
+                <ArrowUpRight size={13} />
+              </a>
             </div>
 
             {/* Quick Credentials / Education Ticker */}
@@ -130,30 +224,26 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
-                gap: '1.5rem',
-                paddingTop: '1.5rem',
+                gap: '1.25rem',
+                paddingTop: '1.25rem',
                 borderTop: '1px solid var(--border-subtle)',
                 fontSize: '0.85rem',
                 color: 'var(--text-muted)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--text-primary)', fontWeight: '600' }}>Education:</span>
-                <span>BCA Cloud Computing</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                <span style={{ color: '#ffffff', fontWeight: '600' }}>Academic Focus:</span>
+                <span>BCA Cloud Computing • Mandsaur University</span>
               </div>
               <span style={{ color: 'var(--border-medium)' }}>•</span>
-              <div>
-                <span>Mandsaur University</span>
-              </div>
-              <span style={{ color: 'var(--border-medium)' }}>•</span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#38bdf8' }}>
-                <Layers size={14} />
-                <span>Tech + Visual Systems</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#10b981' }}>
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#10b981', display: 'inline-block' }} />
+                <span>24h Prototype Ready</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Subtle Animated Visual Showcase Element */}
+          {/* Right Column: High-Tech Security & Engineering Showcase Card */}
           <div
             style={{
               position: 'relative',
@@ -162,26 +252,26 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
               alignItems: 'center'
             }}
           >
-            {/* Visual Glass Card showcasing Arjun's 3D Isometric & Brand Works */}
             <div
               className="glass-card"
               style={{
                 width: '100%',
-                maxWidth: '440px',
+                maxWidth: '470px',
                 borderRadius: '1.5rem',
-                padding: '1.5rem',
-                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 60px rgba(59, 130, 246, 0.1)',
-                position: 'relative'
+                padding: '1.75rem',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 70px rgba(59, 130, 246, 0.12)',
+                border: '1px solid rgba(59, 130, 246, 0.25)',
+                background: 'linear-gradient(180deg, #101018 0%, #09090d 100%)'
               }}
             >
-              {/* Card Header Bar */}
+              {/* Terminal Title Bar */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   marginBottom: '1.25rem',
-                  paddingBottom: '0.75rem',
+                  paddingBottom: '0.85rem',
                   borderBottom: '1px solid var(--border-subtle)'
                 }}
               >
@@ -192,158 +282,154 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '0.75rem',
-                      color: 'var(--text-muted)',
-                      marginLeft: '0.5rem'
+                      fontSize: '0.78rem',
+                      color: '#a1a1aa',
+                      marginLeft: '0.4rem'
                     }}
                   >
-                    folio_curation_2026
+                    arjun@system-console:~$
                   </span>
                 </div>
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.7rem',
-                    color: '#60a5fa',
-                    background: 'rgba(59, 130, 246, 0.15)',
-                    padding: '0.2rem 0.5rem',
+                    fontSize: '0.72rem',
+                    color: '#34d399',
+                    background: 'rgba(16, 185, 129, 0.12)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    padding: '0.2rem 0.55rem',
                     borderRadius: '4px'
                   }}
                 >
-                  60 FPS
+                  SYSTEMS ONLINE
                 </span>
               </div>
 
-              {/* Showcase Visual Window: Floating Layer with Hover Micro-motion */}
-              <div
-                style={{
-                  borderRadius: '1rem',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(180deg, #121218 0%, #09090c 100%)',
-                  border: '1px solid var(--border-subtle)',
-                  position: 'relative',
-                  aspectRatio: '4 / 3',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer'
-                }}
-                onClick={() => scrollToSection('#work')}
-                className="group"
-              >
-                {/* Visual Art Layer */}
-                <img
-                  src="./assets/hero/hero-isometric.png"
-                  alt="3D Layer Design by Arjun Rathod"
-                  style={{
-                    width: '65%',
-                    maxHeight: '80%',
-                    objectFit: 'contain',
-                    filter: 'drop-shadow(0 15px 25px rgba(59, 130, 246, 0.3))'
-                  }}
-                  className="animate-float"
-                />
-
-                {/* Overlaid Pill Badge */}
+              {/* Live Project Feats Terminal Grid */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
+                {/* Feat 1: Vault Guard */}
                 <div
+                  onClick={() => scrollToSection('#power-projects')}
                   style={{
-                    position: 'absolute',
-                    bottom: '1rem',
-                    left: '1rem',
-                    right: '1rem',
-                    padding: '0.65rem 0.9rem',
-                    background: 'rgba(9, 9, 11, 0.85)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '0.65rem',
-                    border: '1px solid var(--border-medium)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
+                    background: 'rgba(59, 130, 246, 0.06)',
+                    border: '1px solid rgba(59, 130, 246, 0.25)',
+                    borderRadius: '0.85rem',
+                    padding: '1rem 1.15rem',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, border-color 0.2s ease'
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.6)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.25)')}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div
-                      style={{
-                        width: '8px',
-                        height: '8px',
-                        borderRadius: '50%',
-                        backgroundColor: '#3b82f6'
-                      }}
-                    />
-                    <span style={{ fontSize: '0.8rem', fontWeight: '600', color: '#ffffff' }}>
-                      Selected Works 2026
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <ShieldCheck size={16} className="text-blue-400" />
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                        Vault Guard System
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#60a5fa', fontWeight: '600' }}>
+                      90% SITE SAFETY
                     </span>
                   </div>
-                  <span
-                    style={{
-                      fontSize: '0.75rem',
-                      color: 'var(--text-secondary)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.25rem'
-                    }}
-                  >
-                    Explore <Eye size={12} />
-                  </span>
+                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                    2FA encryption-based web protection layer & SQL injection proofing.
+                  </p>
+                </div>
+
+                {/* Feat 2: Cloud Data Guard */}
+                <div
+                  onClick={() => scrollToSection('#power-projects')}
+                  style={{
+                    background: 'rgba(16, 185, 129, 0.06)',
+                    border: '1px solid rgba(16, 185, 129, 0.25)',
+                    borderRadius: '0.85rem',
+                    padding: '1rem 1.15rem',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, border-color 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.6)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.25)')}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <Terminal size={16} className="text-emerald-400" />
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                        Cloud Data Guard
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#34d399', fontWeight: '600' }}>
+                      AUTO-BAN ACTIVE
+                    </span>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                    Automated secure pipeline preventing duplicate cloud entries with session banning.
+                  </p>
+                </div>
+
+                {/* Feat 3: Motion & App Capabilities */}
+                <div
+                  onClick={() => scrollToSection('#power-projects')}
+                  style={{
+                    background: 'rgba(245, 158, 11, 0.06)',
+                    border: '1px solid rgba(245, 158, 11, 0.25)',
+                    borderRadius: '0.85rem',
+                    padding: '1rem 1.15rem',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, border-color 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.6)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.25)')}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <Film size={16} className="text-amber-400" />
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                        Video Editing & App Maker
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#fbbf24', fontWeight: '600' }}>
+                      4K / 60 FPS REEL
+                    </span>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                    CloudBus mobile app UI + High-retention motion design reels with instant playback.
+                  </p>
                 </div>
               </div>
 
-              {/* Micro Gallery Thumbnails below */}
+              {/* Bottom Console Status & Action Button */}
               <div
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '0.75rem',
-                  marginTop: '1rem'
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  paddingTop: '0.85rem',
+                  borderTop: '1px solid var(--border-subtle)',
+                  fontSize: '0.8rem'
                 }}
               >
-                <div
-                  onClick={() => scrollToSection('#videos')}
-                  style={{
-                    borderRadius: '0.6rem',
-                    border: '1px solid var(--border-subtle)',
-                    padding: '0.5rem',
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    cursor: 'pointer',
-                    textAlign: 'center'
-                  }}
-                  title="View Video Showcase"
-                >
-                  <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ffffff' }}>Video</div>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Pacing & Reels</div>
+                <div style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                  Status: Ready for deployment
                 </div>
-
-                <div
-                  onClick={() => scrollToSection('#case-studies')}
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('#power-projects')}
                   style={{
-                    borderRadius: '0.6rem',
-                    border: '1px solid var(--border-subtle)',
-                    padding: '0.5rem',
-                    background: 'rgba(255, 255, 255, 0.02)',
+                    background: 'none',
+                    border: 'none',
+                    color: '#60a5fa',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
                     cursor: 'pointer',
-                    textAlign: 'center'
+                    fontSize: '0.82rem'
                   }}
-                  title="View 10-Step Case Studies"
                 >
-                  <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ffffff' }}>Branding</div>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Full Systems</div>
-                </div>
-
-                <div
-                  onClick={() => scrollToSection('#motion')}
-                  style={{
-                    borderRadius: '0.6rem',
-                    border: '1px solid var(--border-subtle)',
-                    padding: '0.5rem',
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    cursor: 'pointer',
-                    textAlign: 'center'
-                  }}
-                  title="View Motion Graphics"
-                >
-                  <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ffffff' }}>Motion</div>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Logo & Text</div>
-                </div>
+                  <span>Inspect Live Projects</span>
+                  <ArrowDown size={14} />
+                </button>
               </div>
             </div>
           </div>
@@ -353,7 +439,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
       <style>{`
         @media (min-width: 960px) {
           .hero-grid {
-            grid-template-columns: 1.2fr 0.9fr !important;
+            grid-template-columns: 1.25fr 0.85fr !important;
           }
         }
       `}</style>
