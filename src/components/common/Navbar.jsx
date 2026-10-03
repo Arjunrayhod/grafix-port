@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageCircle, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { personalInfo } from '../../data/personal';
 
-export default function Navbar({ onOpenContact }) {
+export default function Navbar({ onOpenContact, theme = 'dark', onToggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -83,7 +83,7 @@ export default function Navbar({ onOpenContact }) {
                 fontWeight: '800',
                 fontSize: '1.05rem',
                 letterSpacing: '-0.02em',
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.4rem'
@@ -97,7 +97,7 @@ export default function Navbar({ onOpenContact }) {
                 alignItems: 'center',
                 gap: '0.35rem',
                 fontSize: '0.7rem',
-                color: '#34d399',
+                color: '#10b981',
                 fontFamily: 'var(--font-mono)'
               }}
             >
@@ -138,7 +138,7 @@ export default function Navbar({ onOpenContact }) {
                 transition: 'color 0.2s ease',
                 cursor: 'pointer'
               }}
-              onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
+              onMouseEnter={(e) => (e.target.style.color = 'var(--text-primary)')}
               onMouseLeave={(e) => (e.target.style.color = 'var(--text-secondary)')}
             >
               {link.name}
@@ -146,8 +146,43 @@ export default function Navbar({ onOpenContact }) {
           ))}
         </nav>
 
-        {/* Desktop CTA & Mobile Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        {/* Desktop CTAs, Theme Toggle & Mobile Menu Trigger */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          {/* Dark / Light (White) Mode Switcher */}
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'Light / White' : 'Dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'Light / White' : 'Dark'} mode`}
+            style={{
+              background: theme === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.06)',
+              border: '1px solid var(--border-medium)',
+              borderRadius: '0.55rem',
+              padding: '0.45rem 0.75rem',
+              color: 'var(--text-primary)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              fontSize: '0.8rem',
+              fontFamily: 'var(--font-mono)',
+              transition: 'all 0.2s ease'
+            }}
+          >
+            {theme === 'dark' ? (
+              <>
+                <Sun size={15} className="text-amber-400" />
+                <span className="hidden-mobile">Light</span>
+              </>
+            ) : (
+              <>
+                <Moon size={15} className="text-blue-600" />
+                <span className="hidden-mobile">Dark</span>
+              </>
+            )}
+          </button>
+
+          {/* Direct WhatsApp CTA */}
           <a
             href={personalInfo.contact.whatsapp}
             target="_blank"
@@ -158,6 +193,7 @@ export default function Navbar({ onOpenContact }) {
               fontSize: '0.85rem',
               display: 'none',
               background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: '#ffffff',
               border: 'none',
               boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
             }}
@@ -172,11 +208,11 @@ export default function Navbar({ onOpenContact }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
             style={{
-              background: 'rgba(255, 255, 255, 0.06)',
+              background: theme === 'dark' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(15, 23, 42, 0.06)',
               border: '1px solid var(--border-medium)',
               borderRadius: '0.5rem',
               padding: '0.5rem',
-              color: '#ffffff',
+              color: 'var(--text-primary)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -196,7 +232,7 @@ export default function Navbar({ onOpenContact }) {
             position: 'fixed',
             inset: 0,
             top: '4.5rem',
-            background: 'rgba(9, 9, 11, 0.98)',
+            background: theme === 'dark' ? 'rgba(9, 9, 11, 0.98)' : 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(20px)',
             borderTop: '1px solid var(--border-subtle)',
             padding: '2rem 1.5rem',
@@ -218,12 +254,54 @@ export default function Navbar({ onOpenContact }) {
                   color: 'var(--text-primary)',
                   textDecoration: 'none',
                   paddingBottom: '0.5rem',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                  borderBottom: '1px solid var(--border-subtle)'
                 }}
               >
                 {link.name}
               </a>
             ))}
+
+            {/* Mobile Theme Toggle Item */}
+            <div
+              onClick={onToggleTheme}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0.75rem 0',
+                cursor: 'pointer',
+                borderBottom: '1px solid var(--border-subtle)'
+              }}
+            >
+              <span style={{ fontSize: '1.1rem', fontWeight: '600', color: 'var(--text-primary)' }}>
+                Theme Mode
+              </span>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.35rem 0.75rem',
+                  borderRadius: '0.5rem',
+                  background: 'var(--border-subtle)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.8rem',
+                  color: 'var(--text-primary)'
+                }}
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <Sun size={14} className="text-amber-400" />
+                    <span>Dark (Switch to Light)</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon size={14} className="text-blue-600" />
+                    <span>Light (Switch to Dark)</span>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           <div style={{ marginTop: '2rem' }}>
@@ -236,7 +314,9 @@ export default function Navbar({ onOpenContact }) {
                 width: '100%',
                 boxSizing: 'border-box',
                 background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-                justifyContent: 'center'
+                color: '#ffffff',
+                justifyContent: 'center',
+                border: 'none'
               }}
             >
               <MessageCircle size={16} />

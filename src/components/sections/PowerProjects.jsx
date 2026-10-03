@@ -4,7 +4,7 @@ import { GithubIcon } from '../common/Icons';
 import { personalInfo } from '../../data/personal';
 import { powerProjects } from '../../data/projects';
 
-export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
+export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'dark' }) {
   // Vault Guard Security Interactive Terminal State
   const [vaultStatus, setVaultStatus] = useState('protected');
   const [vaultLogs, setVaultLogs] = useState([
@@ -72,7 +72,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
   };
 
   return (
-    <section id="power-projects" className="section-wrapper" style={{ borderTop: '1px solid var(--border-subtle)', background: '#0a0a0f' }}>
+    <section id="power-projects" className="section-wrapper" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-dark)' }}>
       <div className="container-custom">
         {/* Section Header */}
         <div style={{ marginBottom: '3.5rem' }}>
@@ -131,7 +131,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
               padding: '2rem',
               display: 'flex',
               flexDirection: 'column',
-              background: '#0d0d14',
+              background: 'var(--bg-card)',
               border: '1px solid rgba(59, 130, 246, 0.3)',
               boxShadow: '0 15px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(59, 130, 246, 0.08)',
               position: 'relative'
@@ -194,7 +194,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
                     fontFamily: 'var(--font-display)',
                     fontSize: '1.45rem',
                     fontWeight: '800',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     margin: 0
                   }}
                 >
@@ -232,7 +232,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
             {/* Interactive Live Defense Console */}
             <div
               style={{
-                background: '#050508',
+                background: 'var(--bg-card-elevated)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '0.75rem',
                 padding: '1rem',
@@ -249,7 +249,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
                   style={{
                     background: 'rgba(59, 130, 246, 0.2)',
                     border: '1px solid rgba(59, 130, 246, 0.4)',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     borderRadius: '0.35rem',
                     padding: '0.2rem 0.55rem',
                     fontSize: '0.7rem',
@@ -342,7 +342,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
               padding: '2rem',
               display: 'flex',
               flexDirection: 'column',
-              background: '#0d0d14',
+              background: 'var(--bg-card)',
               border: '1px solid rgba(16, 185, 129, 0.3)',
               boxShadow: '0 15px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(16, 185, 129, 0.08)',
               position: 'relative'
@@ -405,7 +405,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
                     fontFamily: 'var(--font-display)',
                     fontSize: '1.45rem',
                     fontWeight: '800',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     margin: 0
                   }}
                 >
@@ -443,7 +443,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
             {/* Interactive Live Stream Console */}
             <div
               style={{
-                background: '#050508',
+                background: 'var(--bg-card-elevated)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '0.75rem',
                 padding: '1rem',
@@ -460,7 +460,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
                   style={{
                     background: 'rgba(16, 185, 129, 0.2)',
                     border: '1px solid rgba(16, 185, 129, 0.4)',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     borderRadius: '0.35rem',
                     padding: '0.2rem 0.55rem',
                     fontSize: '0.7rem',
@@ -553,7 +553,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
               padding: '2rem',
               display: 'flex',
               flexDirection: 'column',
-              background: '#0d0d14',
+              background: 'var(--bg-card)',
               border: '1px solid rgba(245, 158, 11, 0.3)',
               boxShadow: '0 15px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(245, 158, 11, 0.08)',
               position: 'relative'
@@ -856,8 +856,8 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
             marginTop: '3rem',
             padding: '2rem 2.5rem',
             borderRadius: '1.5rem',
-            background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 15, 25, 0.9) 100%)',
-            border: '1px solid rgba(59, 130, 246, 0.25)',
+            background: theme === 'dark' ? 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 15, 25, 0.9) 100%)' : 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(241, 245, 249, 0.95) 100%)',
+            border: '1px solid var(--border-medium)',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
@@ -871,20 +871,20 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo }) {
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.72rem',
-                  color: '#60a5fa',
-                  background: 'rgba(59, 130, 246, 0.2)',
+                  color: '#2563eb',
+                  background: 'rgba(37, 99, 235, 0.12)',
                   padding: '0.2rem 0.55rem',
                   borderRadius: '4px'
                 }}
               >
                 App Maker Showcase
               </span>
-              <span style={{ fontSize: '0.85rem', color: '#ffffff', fontWeight: '700' }}>CloudBus Transit Network</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-primary)', fontWeight: '700' }}>CloudBus Transit Network</span>
             </div>
-            <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.4rem' }}>
+            <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
               Full Mobile App Architecture & Live Screen Walkthrough
             </h4>
-            <p style={{ fontSize: '0.88rem', color: '#a1a1aa', margin: 0, lineHeight: '1.55' }}>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.55' }}>
               Designed and built for transit convenience: Digital e-pass issuance, concession verification, and passenger live chat helpdesk.
             </p>
           </div>

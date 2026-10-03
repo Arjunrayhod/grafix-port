@@ -67,7 +67,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 fontWeight: '800',
                 lineHeight: '1.12',
                 letterSpacing: '-0.035em',
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 marginBottom: '1.35rem'
               }}
             >
@@ -90,7 +90,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
               style={{
                 fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
                 lineHeight: '1.6',
-                color: '#d4d4d8',
+                color: 'var(--text-secondary)',
                 maxWidth: '42rem',
                 marginBottom: '2rem',
                 fontWeight: '400'
@@ -108,19 +108,19 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 marginBottom: '2.5rem'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
                 <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
                 <span><strong>Vault Guard:</strong> 2FA & SQLi Proofing (90% Safe)</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
                 <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
                 <span><strong>Cloud Data Guard:</strong> Active Session Banning</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
                 <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
                 <span><strong>App Making:</strong> CloudBus Transit Platform</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: '#e4e4e7' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
                 <CheckCircle2 size={16} className="text-emerald-400" style={{ flexShrink: 0 }} />
                 <span><strong>Video & Motion:</strong> 4K / 60 FPS High-Retention Reels</span>
               </div>
@@ -259,9 +259,9 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 maxWidth: '470px',
                 borderRadius: '1.5rem',
                 padding: '1.75rem',
-                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 70px rgba(59, 130, 246, 0.12)',
-                border: '1px solid rgba(59, 130, 246, 0.25)',
-                background: 'linear-gradient(180deg, #101018 0%, #09090d 100%)'
+                boxShadow: theme === 'dark' ? '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 70px rgba(59, 130, 246, 0.12)' : '0 20px 45px rgba(0, 0, 0, 0.08), 0 0 50px rgba(59, 130, 246, 0.08)',
+                border: '1px solid var(--border-medium)',
+                background: theme === 'dark' ? 'linear-gradient(180deg, #101018 0%, #09090d 100%)' : 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)'
               }}
             >
               {/* Terminal Title Bar */}
@@ -283,7 +283,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '0.78rem',
-                      color: '#a1a1aa',
+                      color: 'var(--text-muted)',
                       marginLeft: '0.4rem'
                     }}
                   >
@@ -294,7 +294,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.72rem',
-                    color: '#34d399',
+                    color: '#10b981',
                     background: 'rgba(16, 185, 129, 0.12)',
                     border: '1px solid rgba(16, 185, 129, 0.3)',
                     padding: '0.2rem 0.55rem',
@@ -311,7 +311,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 <div
                   onClick={() => scrollToSection('#power-projects')}
                   style={{
-                    background: 'rgba(59, 130, 246, 0.06)',
+                    background: theme === 'dark' ? 'rgba(59, 130, 246, 0.06)' : 'rgba(59, 130, 246, 0.05)',
                     border: '1px solid rgba(59, 130, 246, 0.25)',
                     borderRadius: '0.85rem',
                     padding: '1rem 1.15rem',
@@ -324,15 +324,15 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <ShieldCheck size={16} className="text-blue-400" />
-                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>
                         Vault Guard System
                       </span>
                     </div>
-                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#60a5fa', fontWeight: '600' }}>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#2563eb', fontWeight: '600' }}>
                       90% SITE SAFETY
                     </span>
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.45' }}>
                     2FA encryption-based web protection layer & SQL injection proofing.
                   </p>
                 </div>
@@ -341,7 +341,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 <div
                   onClick={() => scrollToSection('#power-projects')}
                   style={{
-                    background: 'rgba(16, 185, 129, 0.06)',
+                    background: theme === 'dark' ? 'rgba(16, 185, 129, 0.06)' : 'rgba(16, 185, 129, 0.05)',
                     border: '1px solid rgba(16, 185, 129, 0.25)',
                     borderRadius: '0.85rem',
                     padding: '1rem 1.15rem',
@@ -353,16 +353,16 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <Terminal size={16} className="text-emerald-400" />
-                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                      <Terminal size={16} className="text-emerald-500" />
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>
                         Cloud Data Guard
                       </span>
                     </div>
-                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#34d399', fontWeight: '600' }}>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#059669', fontWeight: '600' }}>
                       AUTO-BAN ACTIVE
                     </span>
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.45' }}>
                     Automated secure pipeline preventing duplicate cloud entries with session banning.
                   </p>
                 </div>
@@ -371,7 +371,7 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 <div
                   onClick={() => scrollToSection('#power-projects')}
                   style={{
-                    background: 'rgba(245, 158, 11, 0.06)',
+                    background: theme === 'dark' ? 'rgba(245, 158, 11, 0.06)' : 'rgba(245, 158, 11, 0.05)',
                     border: '1px solid rgba(245, 158, 11, 0.25)',
                     borderRadius: '0.85rem',
                     padding: '1rem 1.15rem',
@@ -383,16 +383,16 @@ export default function Hero({ onOpenProject, onOpenVideo }) {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <Film size={16} className="text-amber-400" />
-                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#ffffff' }}>
+                      <Film size={16} className="text-amber-500" />
+                      <span style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>
                         Video Editing & App Maker
                       </span>
                     </div>
-                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#fbbf24', fontWeight: '600' }}>
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: '#d97706', fontWeight: '600' }}>
                       4K / 60 FPS REEL
                     </span>
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: '#a1a1aa', margin: 0, lineHeight: '1.45' }}>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.45' }}>
                     CloudBus mobile app UI + High-retention motion design reels with instant playback.
                   </p>
                 </div>

@@ -3,7 +3,7 @@ import { Mail, Send, ArrowUpRight, Copy, Check, MessageSquare, MessageCircle, Cl
 import { LinkedinIcon, GithubIcon } from '../common/Icons';
 import { personalInfo } from '../../data/personal';
 
-export default function Contact() {
+export default function Contact({ theme = 'dark' }) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
@@ -31,7 +31,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-wrapper" style={{ borderTop: '1px solid var(--border-subtle)', background: '#07070b' }}>
+    <section id="contact" className="section-wrapper" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-dark)' }}>
       <div className="container-custom">
         {/* ============================================================== */}
         {/* SECTION C: TRANSPARENT CONTACT ANCHOR & 24H PROTOTYPE BANNER   */}
@@ -39,11 +39,11 @@ export default function Contact() {
         <div
           style={{
             borderRadius: '2rem',
-            background: 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.25) 0%, rgba(9, 9, 15, 0.95) 70%)',
-            border: '1px solid rgba(59, 130, 246, 0.35)',
+            background: theme === 'dark' ? 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.25) 0%, rgba(9, 9, 15, 0.95) 70%)' : 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.12) 0%, rgba(241, 245, 249, 0.98) 70%)',
+            border: '1px solid var(--border-medium)',
             padding: '3rem 2.5rem',
             marginBottom: '4rem',
-            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.8), 0 0 60px rgba(37, 99, 235, 0.15)',
+            boxShadow: theme === 'dark' ? '0 25px 70px rgba(0, 0, 0, 0.8), 0 0 60px rgba(37, 99, 235, 0.15)' : '0 20px 50px rgba(0, 0, 0, 0.08), 0 0 40px rgba(37, 99, 235, 0.08)',
             textAlign: 'center',
             position: 'relative',
             overflow: 'hidden'
@@ -78,7 +78,7 @@ export default function Contact() {
               fontWeight: '800',
               lineHeight: '1.1',
               letterSpacing: '-0.035em',
-              color: '#ffffff',
+              color: 'var(--text-primary)',
               maxWidth: '52rem',
               margin: '0 auto 1.25rem auto'
             }}
@@ -99,7 +99,7 @@ export default function Contact() {
           <p
             style={{
               fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
-              color: '#d4d4d8',
+              color: 'var(--text-secondary)',
               maxWidth: '42rem',
               margin: '0 auto 2.5rem auto',
               lineHeight: '1.6'
@@ -180,7 +180,7 @@ export default function Contact() {
                 fontSize: 'clamp(1.75rem, 3.5vw, 2.4rem)',
                 fontWeight: '800',
                 letterSpacing: '-0.025em',
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 marginBottom: '1rem'
               }}
             >
@@ -232,7 +232,7 @@ export default function Contact() {
                     <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
                       Direct Developer Email
                     </div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: '600', color: '#ffffff' }}>
+                    <div style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)' }}>
                       {personalInfo.contact.email}
                     </div>
                   </div>
@@ -331,8 +331,8 @@ export default function Contact() {
             style={{
               padding: '2.25rem',
               borderRadius: '1.25rem',
-              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+              border: '1px solid var(--border-medium)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
@@ -341,7 +341,7 @@ export default function Contact() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.35rem',
                   fontWeight: '700',
-                  color: '#ffffff',
+                  color: 'var(--text-primary)',
                   margin: 0
                 }}
               >
