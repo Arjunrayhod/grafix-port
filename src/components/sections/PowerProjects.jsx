@@ -27,6 +27,41 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [activeReelType, setActiveReelType] = useState('editing'); // 'editing' | 'explanation'
+
+  const reelVideos = {
+    editing: {
+      type: 'editing',
+      badge: 'Short Video • Editing Reel',
+      title: 'Editing Showcase & Retention Reel',
+      subtitle: 'Dynamic Speed Ramps, Audio SFX & Hook Pacing',
+      writeup: '"High-energy short video demonstrating rhythm beat matching, dynamic speed ramping, audio SFX risers, and retention-first editing designed for creators and brands."',
+      src: resolveAsset('./assets/videos/editing-showcase-short.mp4'),
+      poster: resolveAsset('./assets/projects/focus-poster.jpg'),
+      tag: 'Short Reel • 6.5MB'
+    },
+    explanation: {
+      type: 'explanation',
+      badge: 'Long Video • In-Depth Explanation',
+      title: 'Full Project Architecture Walkthrough',
+      subtitle: 'Recorded In-Depth Breakdown by Arjun Rathod',
+      writeup: '"Comprehensive video walkthrough where I personally explain the end-to-end project architecture, security pipelines, code decisions, and operational execution."',
+      src: resolveAsset('./assets/videos/project-explanation-long.mp4'),
+      poster: resolveAsset('./assets/projects/cloudbus-app-poster.jpeg'),
+      tag: 'Long Walkthrough • 31.9MB'
+    }
+  };
+
+  const currentReel = reelVideos[activeReelType];
+
+  const handleSwitchReel = (type) => {
+    if (activeReelType === type) return;
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setIsPlaying(false);
+    setActiveReelType(type);
+  };
 
   // Vault Guard Simulation trigger
   const handleTestVaultSecurity = () => {
@@ -567,15 +602,15 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.72rem',
-                    background: 'rgba(245, 158, 11, 0.15)',
-                    color: '#fde68a',
-                    border: '1px solid rgba(245, 158, 11, 0.35)',
+                    background: activeReelType === 'explanation' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(245, 158, 11, 0.15)',
+                    color: activeReelType === 'explanation' ? '#93c5fd' : '#fde68a',
+                    border: activeReelType === 'explanation' ? '1px solid rgba(59, 130, 246, 0.35)' : '1px solid rgba(245, 158, 11, 0.35)',
                     padding: '0.25rem 0.6rem',
                     borderRadius: '0.35rem',
                     fontWeight: '700'
                   }}
                 >
-                  Direct Video & Motion Reel
+                  {currentReel.badge}
                 </span>
                 <span
                   style={{
@@ -592,7 +627,71 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   Playable In-Browser
                 </span>
               </div>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>4K 60FPS</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>{currentReel.tag}</span>
+            </div>
+
+            {/* Video Mode 1-Click Interactive Switcher */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '0.5rem',
+                background: 'rgba(0, 0, 0, 0.4)',
+                padding: '0.35rem',
+                borderRadius: '0.75rem',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                marginBottom: '1rem'
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => handleSwitchReel('editing')}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.4rem',
+                  padding: '0.55rem 0.6rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: activeReelType === 'editing' ? '700' : '500',
+                  color: activeReelType === 'editing' ? '#ffffff' : '#a1a1aa',
+                  background: activeReelType === 'editing' ? 'linear-gradient(135deg, #f59e0b, #d97706)' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  boxShadow: activeReelType === 'editing' ? '0 2px 10px rgba(245, 158, 11, 0.35)' : 'none'
+                }}
+              >
+                <Zap size={13} />
+                <span>⚡ Short: Editing Reel</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleSwitchReel('explanation')}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.4rem',
+                  padding: '0.55rem 0.6rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: activeReelType === 'explanation' ? '700' : '500',
+                  color: activeReelType === 'explanation' ? '#ffffff' : '#a1a1aa',
+                  background: activeReelType === 'explanation' ? 'linear-gradient(135deg, #3b82f6, #1d4ed8)' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  boxShadow: activeReelType === 'explanation' ? '0 2px 10px rgba(59, 130, 246, 0.35)' : 'none'
+                }}
+              >
+                <Terminal size={13} />
+                <span>🎙️ Long: Project Explain</span>
+              </button>
             </div>
 
             {/* Title */}
@@ -602,11 +701,11 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   width: '2.5rem',
                   height: '2.5rem',
                   borderRadius: '0.65rem',
-                  background: 'rgba(245, 158, 11, 0.15)',
+                  background: activeReelType === 'explanation' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(245, 158, 11, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#fbbf24'
+                  color: activeReelType === 'explanation' ? '#60a5fa' : '#fbbf24'
                 }}
               >
                 <Film size={20} />
@@ -615,16 +714,16 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                 <h3
                   style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '1.45rem',
+                    fontSize: '1.35rem',
                     fontWeight: '800',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     margin: 0
                   }}
                 >
-                  Motion Graphics Reel
+                  {currentReel.title}
                 </h3>
-                <span style={{ fontSize: '0.78rem', color: '#fbbf24', fontFamily: 'var(--font-mono)' }}>
-                  Video Editing & Retention Pacing
+                <span style={{ fontSize: '0.78rem', color: activeReelType === 'explanation' ? '#60a5fa' : '#fbbf24', fontFamily: 'var(--font-mono)' }}>
+                  {currentReel.subtitle}
                 </span>
               </div>
             </div>
@@ -632,8 +731,8 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
             {/* Write-up */}
             <div
               style={{
-                background: 'rgba(245, 158, 11, 0.06)',
-                borderLeft: '3px solid #f59e0b',
+                background: activeReelType === 'explanation' ? 'rgba(59, 130, 246, 0.06)' : 'rgba(245, 158, 11, 0.06)',
+                borderLeft: activeReelType === 'explanation' ? '3px solid #3b82f6' : '3px solid #f59e0b',
                 padding: '0.9rem 1rem',
                 borderRadius: '0 0.5rem 0.5rem 0',
                 margin: '1rem 0 1.25rem 0'
@@ -648,7 +747,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   fontWeight: '500'
                 }}
               >
-                "Direct embedded motion design and high-retention video reel: Engineered with kinetic typography, sound design, and viral pacing."
+                {currentReel.writeup}
               </p>
             </div>
 
@@ -667,9 +766,10 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
               onClick={handleTogglePlayReel}
             >
               <video
+                key={currentReel.src}
                 ref={videoRef}
-                src={resolveAsset('./assets/videos/arjun-video-1.mp4')}
-                poster={resolveAsset('./assets/hero/hero-isometric.png')}
+                src={currentReel.src}
+                poster={currentReel.poster}
                 muted={isMuted}
                 loop
                 playsInline
@@ -700,12 +800,12 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                       width: '3.75rem',
                       height: '3.75rem',
                       borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                      background: activeReelType === 'explanation' ? 'linear-gradient(135deg, #3b82f6, #1d4ed8)' : 'linear-gradient(135deg, #f59e0b, #d97706)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#ffffff',
-                      boxShadow: '0 0 30px rgba(245, 158, 11, 0.6)'
+                      boxShadow: activeReelType === 'explanation' ? '0 0 30px rgba(59, 130, 246, 0.6)' : '0 0 30px rgba(245, 158, 11, 0.6)'
                     }}
                   >
                     <Play size={24} style={{ marginLeft: '3px' }} />
@@ -737,7 +837,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                     border: '1px solid rgba(255, 255, 255, 0.15)'
                   }}
                 >
-                  {isPlaying ? 'PLAYING: MOTION REEL' : 'CLICK TO PLAY'}
+                  {isPlaying ? `PLAYING: ${activeReelType.toUpperCase()}` : 'CLICK TO PLAY'}
                 </span>
 
                 <button
@@ -756,7 +856,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                     cursor: 'pointer'
                   }}
                 >
-                  {isMuted ? <VolumeX size={13} /> : <Volume2 size={13} className="text-amber-400" />}
+                  {isMuted ? <VolumeX size={13} /> : <Volume2 size={13} className={activeReelType === 'explanation' ? 'text-blue-400' : 'text-amber-400'} />}
                 </button>
               </div>
 
@@ -778,40 +878,43 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   justifyContent: 'space-between'
                 }}
               >
-                <span>Arjun Motion Reel 2026</span>
-                <span style={{ color: '#fbbf24' }}>Interactive Stream</span>
+                <span>{activeReelType === 'explanation' ? '🎙️ Arjun Explains System Architecture' : '⚡ Arjun Video Editing Reel'}</span>
+                <span style={{ color: activeReelType === 'explanation' ? '#60a5fa' : '#fbbf24' }}>Interactive Stream</span>
               </div>
             </div>
 
             {/* Key Deliverables */}
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.82rem', color: '#d4d4d8' }}>
-                <Sparkles size={13} className="text-amber-400" />
-                <span>Kinetic vector title cards & logo reveals in After Effects</span>
+                <Sparkles size={13} className={activeReelType === 'explanation' ? 'text-blue-400' : 'text-amber-400'} />
+                <span>{activeReelType === 'explanation' ? 'Complete architectural diagram & full-stack code dissection' : 'Kinetic vector title cards & logo reveals in After Effects'}</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.82rem', color: '#d4d4d8' }}>
-                <Film size={13} className="text-amber-400" />
-                <span>Retention-optimized pacing with rhythmic audio drops</span>
+                <Film size={13} className={activeReelType === 'explanation' ? 'text-blue-400' : 'text-amber-400'} />
+                <span>{activeReelType === 'explanation' ? 'Security layer explanation: 2FA OTP + SQL injection defenses' : 'Retention-optimized pacing with rhythmic audio drops'}</span>
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.82rem', color: '#d4d4d8' }}>
                 <CheckCircle size={13} className="text-emerald-400" />
-                <span>High-CTR visual hooks for digital creators & brands</span>
+                <span>{activeReelType === 'explanation' ? 'Direct personal voiceover walkthrough showcasing developer clarity' : 'High-CTR visual hooks for digital creators & brands'}</span>
               </li>
             </ul>
 
             {/* Stack Tags */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '1.5rem', marginTop: 'auto' }}>
-              {['Premiere Pro', 'After Effects', 'DaVinci Resolve', 'Kinetic Motion', 'Sound Design'].map((t) => (
+              {(activeReelType === 'explanation' 
+                ? ['System Architecture', 'Security Walkthrough', 'Full-Stack Code', 'Live Explanation', 'Developer Pacing']
+                : ['Premiere Pro', 'After Effects', 'DaVinci Resolve', 'Kinetic Motion', 'Sound Design']
+              ).map((t) => (
                 <span
                   key={t}
                   style={{
                     fontSize: '0.7rem',
                     fontFamily: 'var(--font-mono)',
-                    color: '#fde68a',
-                    background: 'rgba(245, 158, 11, 0.08)',
+                    color: activeReelType === 'explanation' ? '#93c5fd' : '#fde68a',
+                    background: activeReelType === 'explanation' ? 'rgba(59, 130, 246, 0.08)' : 'rgba(245, 158, 11, 0.08)',
                     padding: '0.2rem 0.45rem',
                     borderRadius: '4px',
-                    border: '1px solid rgba(245, 158, 11, 0.2)'
+                    border: activeReelType === 'explanation' ? '1px solid rgba(59, 130, 246, 0.2)' : '1px solid rgba(245, 158, 11, 0.2)'
                   }}
                 >
                   {t}
@@ -830,11 +933,11 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                   padding: '0.65rem 0.9rem',
                   fontSize: '0.82rem',
                   justifyContent: 'center',
-                  background: 'linear-gradient(135deg, #f59e0b, #d97706)'
+                  background: activeReelType === 'explanation' ? 'linear-gradient(135deg, #3b82f6, #1d4ed8)' : 'linear-gradient(135deg, #f59e0b, #d97706)'
                 }}
               >
                 {isPlaying ? <Pause size={15} /> : <Play size={15} />}
-                <span>{isPlaying ? 'Pause Reel' : 'Play Motion Reel'}</span>
+                <span>{isPlaying ? 'Pause Video' : `Play ${activeReelType === 'explanation' ? 'Explanation' : 'Editing Reel'}`}</span>
               </button>
               <a
                 href={personalInfo.contact.github}
@@ -845,7 +948,7 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
                 title="View Creator Profiles"
               >
                 <ExternalLink size={14} />
-                <span>Channel</span>
+                <span>GitHub</span>
               </a>
             </div>
           </div>
