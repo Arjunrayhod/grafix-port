@@ -1,3 +1,5 @@
+import { resolveAsset } from '../utils/assets';
+
 export const brandCaseStudies = [
   {
     id: "dukaanpilot-brand-system",
@@ -25,7 +27,7 @@ export const brandCaseStudies = [
         title: "Logo Mark & Construction",
         summary: "Geometric synthesis of form, function, and memorable silhouette.",
         content: "Logomarks are engineered on strict mathematical grids with balanced corner radii. For DukaanPilot, a dynamic folding ribbon forms a letter 'D' and aerodynamic navigation wing. For CloudBus, a friendly rounded transit glyph sits within a balanced squircle container designed for mobile app launchers.",
-        logoImage: "./assets/logos/master-logo-grid.png",
+        logoImage: resolveAsset("./assets/logos/master-logo-grid.png"),
         constructionNotes: "Crafted in Adobe Illustrator using golden-ratio circular arcs and 8-degree kinetic slants."
       },
       s03_variations: {
@@ -75,14 +77,14 @@ export const brandCaseStudies = [
         title: "Social Media & Marketing Collateral",
         summary: "Cohesive multi-platform templates engineered for high scroll-stop rates.",
         content: "Created promotional carousels, feature announcement graphics, and benefit-focused visual cards. Each template adheres to rigid 48px margin boundaries, bold value propositions, and dynamic 3D elements that stand out in crowded feeds.",
-        previewImage: "./assets/projects/social-cloud-carousel.jpeg"
+        previewImage: resolveAsset("./assets/projects/social-cloud-carousel.jpeg")
       },
       s07_website: {
         number: "07",
         title: "Website & Digital Product UI",
         summary: "Conversion-optimized digital interfaces and responsive user experiences.",
         content: "Designed high-fidelity mobile application flows including pass booking, live GPS routes, and conversational customer support desks. Features smooth card elevations, clear button touch targets, and intuitive data categorization.",
-        previewImage: "./assets/projects/cloudbus-ui-helpdesk.jpeg"
+        previewImage: resolveAsset("./assets/projects/cloudbus-ui-helpdesk.jpeg")
       },
       s08_mockups: {
         number: "08",
@@ -93,7 +95,7 @@ export const brandCaseStudies = [
           { name: "High-CTR Promotional Posters", desc: "Large-format print and digital billboard advertising 'Travel Smarter, Go Further'." },
           { name: "Digital Helpdesk Portal", desc: "Clean interactive support interface connecting commuters with transit assistants." }
         ],
-        previewImage: "./assets/projects/cloudbus-app-poster.jpeg"
+        previewImage: resolveAsset("./assets/projects/cloudbus-app-poster.jpeg")
       },
       s09_final_result: {
         number: "09",

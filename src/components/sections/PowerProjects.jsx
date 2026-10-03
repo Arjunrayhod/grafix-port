@@ -3,6 +3,7 @@ import { ShieldCheck, Terminal, Film, ExternalLink, Play, Pause, Volume2, Volume
 import { GithubIcon } from '../common/Icons';
 import { personalInfo } from '../../data/personal';
 import { powerProjects } from '../../data/projects';
+import { resolveAsset } from '../../utils/assets';
 
 export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'dark' }) {
   // Vault Guard Security Interactive Terminal State
@@ -667,8 +668,8 @@ export default function PowerProjects({ onOpenLightbox, onPlayVideo, theme = 'da
             >
               <video
                 ref={videoRef}
-                src="./assets/videos/arjun-video-1.mp4"
-                poster="./assets/hero/hero-isometric.png"
+                src={resolveAsset('./assets/videos/arjun-video-1.mp4')}
+                poster={resolveAsset('./assets/hero/hero-isometric.png')}
                 muted={isMuted}
                 loop
                 playsInline

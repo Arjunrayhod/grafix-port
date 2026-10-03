@@ -1,3 +1,5 @@
+import { resolveAsset } from '../utils/assets';
+
 export const projectCategories = [
   "All",
   "Web & Security",
@@ -33,10 +35,10 @@ export const powerProjects = [
     ],
     tools: ["React", "Node.js", "Express", "AES-256", "2FA / TOTP", "PostgreSQL", "Cybersecurity"],
     accentColor: "#3b82f6",
-    coverImage: "./assets/projects/cloudbus-icon.jpeg",
+    coverImage: resolveAsset("./assets/projects/cloudbus-icon.jpeg"),
     githubUrl: "https://github.com/Arjunrayhod",
     liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    videoUrl: resolveAsset("./assets/videos/arjun-video-1.mp4"),
     videoTitle: "Vault Guard Security Protocol Demo"
   },
   {
@@ -65,10 +67,10 @@ export const powerProjects = [
     ],
     tools: ["Cloud Computing", "Node.js", "Python", "Redis", "REST APIs", "Docker", "Cloud Security"],
     accentColor: "#10b981",
-    coverImage: "./assets/projects/cloudbus-lockup.jpeg",
+    coverImage: resolveAsset("./assets/projects/cloudbus-lockup.jpeg"),
     githubUrl: "https://github.com/Arjunrayhod",
     liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
-    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    videoUrl: resolveAsset("./assets/videos/arjun-video-2.mp4"),
     videoTitle: "Cloud Data Guard Pipeline Walkthrough"
   },
   {
@@ -97,9 +99,9 @@ export const powerProjects = [
     ],
     tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Photoshop", "Sound Design"],
     accentColor: "#f59e0b",
-    coverImage: "./assets/projects/focus-poster.jpg",
+    coverImage: resolveAsset("./assets/projects/focus-poster.jpg"),
     youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    videoUrl: resolveAsset("./assets/videos/arjun-video-1.mp4"),
     videoTitle: "Arjun Rathod Motion & Video Showreel",
     githubUrl: "https://github.com/Arjunrayhod"
   }
@@ -120,24 +122,24 @@ export const projects = [
     role: "Product App Designer & Prototype Maker",
     tools: ["React Native / Figma", "Adobe Photoshop", "Illustrator"],
     accentColor: "#2563eb",
-    coverImage: "./assets/projects/cloudbus-app-poster.jpeg",
+    coverImage: resolveAsset("./assets/projects/cloudbus-app-poster.jpeg"),
     githubUrl: "https://github.com/Arjunrayhod",
     liveDemoUrl: "https://github.com/Arjunrayhod/grafix-port",
     gallery: [
       {
-        url: "./assets/projects/cloudbus-app-poster.jpeg",
+        url: resolveAsset("./assets/projects/cloudbus-app-poster.jpeg"),
         caption: "CloudBus Mobile App Presentation: E-Tickets, Student Concession & Digital Pass"
       },
       {
-        url: "./assets/projects/cloudbus-icon.jpeg",
+        url: resolveAsset("./assets/projects/cloudbus-icon.jpeg"),
         caption: "Official App Icon Mark: Gradient Squircle & Vector Bus Glyph"
       },
       {
-        url: "./assets/projects/cloudbus-lockup.jpeg",
+        url: resolveAsset("./assets/projects/cloudbus-lockup.jpeg"),
         caption: "Horizontal Header Brand Lockup"
       }
     ],
-    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    videoUrl: resolveAsset("./assets/videos/arjun-video-2.mp4"),
     videoTitle: "CloudBus Mobile App Flow & Screen Walkthrough",
     hasCaseStudy: false,
     challenge: "Transit booking apps often fail users due to clutter and complicated navigation during rush hours.",
@@ -157,15 +159,15 @@ export const projects = [
     role: "Brand Identity Designer",
     tools: ["Adobe Illustrator", "Figma", "Photoshop"],
     accentColor: "#f97316",
-    coverImage: "./assets/logos/master-logo-grid.png",
+    coverImage: resolveAsset("./assets/logos/master-logo-grid.png"),
     githubUrl: "https://github.com/Arjunrayhod",
     gallery: [
       {
-        url: "./assets/logos/master-logo-grid.png",
+        url: resolveAsset("./assets/logos/master-logo-grid.png"),
         caption: "Master Folio: 9 Original Logomarks and Visual Identities"
       }
     ],
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    videoUrl: resolveAsset("./assets/videos/arjun-video-1.mp4"),
     videoTitle: "Brand & Logo Motion Reel",
     hasCaseStudy: true,
     outcome: "A versatile identity portfolio proving complete grasp of modern brand systems."
@@ -183,8 +185,8 @@ export const projects = [
     role: "Graphic Designer",
     tools: ["Photoshop", "Lightroom"],
     accentColor: "#e4e4e7",
-    coverImage: "./assets/projects/focus-poster.jpg",
-    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    coverImage: resolveAsset("./assets/projects/focus-poster.jpg"),
+    videoUrl: resolveAsset("./assets/videos/arjun-video-2.mp4"),
     videoTitle: "Kinetic Poster & Lighting Reel",
     outcome: "A commanding print and digital poster proving advanced lighting, masking, and typography craft."
   }

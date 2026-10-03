@@ -1,3 +1,5 @@
+import { resolveAsset } from '../utils/assets';
+
 export const videoCategories = [
   "All",
   "Showreel",
@@ -14,12 +16,12 @@ export const videos = [
     duration: "0:30",
     year: "2026",
     description: "High-octane compilation of video editing cuts, rhythm-synced transitions, sound design, and color grading.",
-    poster: "./assets/projects/cloudbus-app-poster.jpeg",
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    poster: resolveAsset("./assets/projects/cloudbus-app-poster.jpeg"),
+    videoUrl: resolveAsset("./assets/videos/arjun-video-1.mp4"),
     client: "Arjun Rathod Original Edit",
     tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
     highlights: ["Speed Ramping", "Dynamic Transitions", "Rhythm Beat Match", "Cinematic Color Grade"],
-    notes: "Actual production MP4 video loaded directly from src/assets."
+    notes: "Actual production MP4 video loaded directly from assets."
   },
   {
     id: "arjun-video-edit-2",
@@ -29,12 +31,12 @@ export const videos = [
     duration: "0:25",
     year: "2026",
     description: "Multi-layered video production integrating graphic overlays, sound design, and clean visual storytelling.",
-    poster: "./assets/projects/focus-poster.jpg",
-    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    poster: resolveAsset("./assets/projects/focus-poster.jpg"),
+    videoUrl: resolveAsset("./assets/videos/arjun-video-2.mp4"),
     client: "Arjun Rathod Original Edit",
     tools: ["Premiere Pro", "CapCut Pro", "Photoshop"],
     highlights: ["Audio FX Risers", "Graphic Overlays", "Hook Visuals", "Engagement Pacing"],
-    notes: "Actual production MP4 video loaded directly from src/assets."
+    notes: "Actual production MP4 video loaded directly from assets."
   },
   {
     id: "dukaanpilot-motion-teaser",
@@ -44,8 +46,8 @@ export const videos = [
     duration: "0:45",
     year: "2026",
     description: "Product animation teaser highlighting brand mark, dynamic data dashboards, and mobile retail management.",
-    poster: "./assets/logos/master-logo-grid.png",
-    videoUrl: "./assets/videos/arjun-video-1.mp4",
+    poster: resolveAsset("./assets/logos/master-logo-grid.png"),
+    videoUrl: resolveAsset("./assets/videos/arjun-video-1.mp4"),
     client: "DukaanPilot Concept",
     tools: ["After Effects", "Figma", "Premiere Pro"],
     highlights: ["Logo Sting", "UI Micro-Interactions", "3D Camera Moves"],
@@ -59,8 +61,8 @@ export const videos = [
     duration: "0:28",
     year: "2026",
     description: "Vertical mobile app feature walkthrough focusing on the digital e-pass and instant student query desk.",
-    poster: "./assets/projects/cloudbus-ui-helpdesk.jpeg",
-    videoUrl: "./assets/videos/arjun-video-2.mp4",
+    poster: resolveAsset("./assets/projects/cloudbus-ui-helpdesk.jpeg"),
+    videoUrl: resolveAsset("./assets/videos/arjun-video-2.mp4"),
     client: "CloudBus Showcase",
     tools: ["Premiere Pro", "CapCut Pro", "Figma"],
     highlights: ["Mobile App Showcase", "Animated Captions", "Smooth Pan Swipes"],
