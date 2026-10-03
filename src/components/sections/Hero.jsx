@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Sparkles, ShieldCheck, Terminal, Smartphone, F
 import { GithubIcon } from '../common/Icons';
 import { personalInfo } from '../../data/personal';
 
-export default function Hero({ onOpenProject, onOpenVideo }) {
+export default function Hero({ theme = 'dark', onOpenProject, onOpenVideo }) {
   const scrollToSection = (id) => {
     const el = document.querySelector(id);
     if (el) {
